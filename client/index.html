@@ -2,6 +2,7 @@
 <html ng-app = 'app'>
 <head>
 	<title>SHP</title>
+	<link rel="shortcut icon" href="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" type="image/png">
 	<script src="/angular/angular.js"></script>
 	<script src="/angular-route/angular-route.js"></script>
 	<script src="/jquery/dist/jquery.js"></script>
@@ -34,7 +35,9 @@
 	  </div>
 	</nav>
 
-	<div id="myCarousel" class="carousel slide">
+	<img class='logo' src="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" alt="SHP Logo">
+
+	<div id="myCarousel" class="carousel slide" data-ride='carousel'>
 	    <div id='home' class="carousel-inner">
 	      <div class="item active">
 	        <img src='http://x.lnimg.com/photo/poster_768/d6fb4cd05a2d4bceb19cdc9ff33a021a.jpg'>
@@ -67,10 +70,10 @@
 	        </div>
 	      </div>
 	    </div>
-	      <a class="left carousel-control" href="/home/#myCarousel" role="button" data-slide="prev">
+	      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 	      <span class="sr-only">Previous</span></a>
-	      <a class="right carousel-control" href="/home/#myCarousel" role="button" data-slide="next">
+	      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
 	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	      <span class="sr-only">Next</span></a>
 	</div>
@@ -108,7 +111,7 @@
 	  	<h4>Contact Us</h4>
 	  	<div class='home_link'>
 	  		<img src="/assets/images/contact.jpg">
-	  		<p class='lead'>Please contact us to receive general information or to inquire about properties for lease.</p>
+	  		<p class='lead'>Please contact us for inquiries about properties for lease.</p>
 	  	</div>
 	  </div>
 	</div>
@@ -147,7 +150,7 @@
           <div class='col-sm-6'>
             <hr class='section-heading-spacer'>
             <div class = 'clearfix'></div>
-            <h2 class='section-heading'>Our Properties</h2>
+            <h2 class='section-heading'>Our Districts</h2>
           </div>
       </div>
       <div class='row'>
@@ -231,21 +234,21 @@
 				  ['Pasadena/Inland Empire West', 34.145716,-118.098421, 'Eva Kwok', '2500 E. Colorado Blvd, Suite 509, Pasadena, CA 91107'],
 				  ['Inland Empire', 34.065284,-117.288475, 'Jamie Johnson' ,'225 W. Hospitality Lane, Suite 206, San Bernardino, CA 92408'],
 				  ['South Bay', 33.886049,-118.353017, 'Dwight Everest', '15901 Hawthorne Blvd, Suite 332, Lawndale, CA 90260'],
-				  ['Long Beach', 34.145716,-118.098421, 'Paul Justice', '3605 Long Beach Blvd, Suite 450, Long Beach, CA 90807'],
-				  ['Orange County North', 34.145716,-118.098421, 'Jennifer Lovelace', '1661 N. Raymond Ave, Suite 130, Anaheim, CA 92801'],
-				  ['Orange County', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  ['Orange County South', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  ['Senior Living and Apartments', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
+				  ['Long Beach', 33.822697,-118.189654, 'Paul Justice', '3605 Long Beach Blvd, Suite 450, Long Beach, CA 90807'],
+				  ['Orange County North', 33.858222,-117.907501, 'Jennifer Lovelace', '1661 N. Raymond Ave, Suite 130, Anaheim, CA 92801'],
+				  ['Orange County', 33.859547,-118.026174, 'Brian Plotkin', '6131 Orangethorpe Ave, Suite 330, Buena Park, CA 90620'],
+				  ['Orange County South', 33.747934, -117.874402, 'Brandon Evans', '660 W. Santa Ana Blvd, Suite 800, Santa Ana, CA 92701'],
+				  ['Senior Living and Apartments', 33.818468, -118.197389, 'James Bender', '3360 Magnolia Ave, Long Beach, CA 90806'],
 				  ];
 
 				function initMap(){
 				    var map = new google.maps.Map(document.getElementById('map'), {
-				      zoom: 11,
-				      center: new google.maps.LatLng(34.052234,-118.243685),
+				      zoom: 9,
+				      center: new google.maps.LatLng(33.971990, -117.727669),
 				      mapTypeId: google.maps.MapTypeId.ROADMAP
 				    });
-
-				    setMarkers(map,locations)
+				    map.setCenter(new google.maps.LatLng(33.971990, -117.727669));
+				    setMarkers(map,locations);
 
 				}
 
@@ -262,7 +265,7 @@
 					        	map: map, title: name , position: latlngset
 					        });
 					    map.setCenter(marker.getPosition())
-						var content = '<div class="info"><h4 class="info-title">SHP Disctrict: <br>'+name+'</h4><p>Manager: ' + manager + '</p><p>' + add  + '</p><p><a href="google.com">Find a Space</a></p></div>'  
+						var content = '<div class="info"><h4 class="info-title">SHP District: <br>'+name+'</h4><p>Manager: ' + manager + '</p><p>' + add  + '</p><p><a href="google.com">Find a Space</a></p></div>'  
 						var infowindow = new google.maps.InfoWindow()
 
 						google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
@@ -421,21 +424,28 @@
 
 	$(".navbar a, footer a").on('click', function(event) {
                 // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-                    // Store hash
-                    var hash = this.hash;
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                        }, 800, function(){
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+            // Store hash
+            var hash = this.hash;
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+                }, 800, function(){
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
             });
+        } // End if
+    });
+
+	$(".property").hover(function(){
+		$(this).css('cursor', 'pointer');
+		$(this).css('opacity', '0.75')
+	}, function(){
+		$(this).css('opacity', '1')
+	})
 </script>
 </body>
 </html>
