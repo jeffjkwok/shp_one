@@ -26,9 +26,9 @@
 	      <ul class="nav navbar-nav navbar-right">
 	        <li class="active"><a href="#home">Home</a></li>
 	        <li><a href="#about">About Us</a></li>
-	        <li><a href="#properties">Our Properties</a></li> 
+	        <li><a href="#properties">Our Properties</a></li>
 	        <li><a href="#find-a-property">Find A Space</a></li>
-	        <li><a href="#contact">Contact Us</a></li> 
+	        <li><a href="#contact">Contact Us</a></li>
 	      </ul>
 	  </div>
 	  </div>
@@ -198,7 +198,7 @@
 	        </div>
 	      </div>
 	  </div>
-	  <div class='row'> 
+	  <div class='row'>
 	      <div class='col-sm-6 col-xs-12 prop'>
 	        <div class='property'>
 	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/600-W.-Santa-Ana-Blvd.-Front-Elevation-1.jpg">
@@ -273,26 +273,26 @@
 
 				function setMarkers(map,locations){
 				    var marker, i
-					for (i = 0; i < locations.length; i++){  
+					for (i = 0; i < locations.length; i++){
 					 	var name = locations[i][0];
 						var lat = locations[i][1];
 						var long = locations[i][2];
 						var manager = locations[i][3]
 						var add =  locations[i][4];
 						latlngset = new google.maps.LatLng(lat, long);
-					  	var marker = new google.maps.Marker({  
-					        	map: map, title: name , position: latlngset  
+					  	var marker = new google.maps.Marker({
+					        	map: map, title: name , position: latlngset
 					        });
 					    map.setCenter(marker.getPosition())
-						var content = '<div class="info">' + name +  ' </br>' + 'Manager: ' + manager + '<br>' + add  + '</div>'  
+						var content = '<div class="info"><h4 class="info-title">SHP Disctrict: <br>'+name+'</h4><p>Manager: ' + manager + '</p><p>' + add  + '</p><p><a href="google.com">Find a Space</a></p></div>'  
 						var infowindow = new google.maps.InfoWindow()
 
-						google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+						google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
 					        return function() {
 					           infowindow.setContent(content);
 					           infowindow.open(map,marker);
 					        };
-					    })(marker,content,infowindow)); 
+					    })(marker,content,infowindow));
 
 					}
 				}
@@ -310,7 +310,7 @@
               <hr class='section-heading-spacer'>
               <div class = 'clearfix'></div>
               <h2 class='section-heading'>Contact Us</h2>
-	          <div class='row'>  
+	          <div class='row'>
 		            <div class='col-sm-6 col-xs-12 cont'>
 		              <div class='contact'>
 		                <h4>Pasadena / Inland Empire West:</h4>
@@ -387,7 +387,7 @@
 		                <p>Fax: 714-972-0616</p>
 		              </div>
 		            </div>
-		            <div class='col-sm-6 col-xs-12 cont'>  
+		            <div class='col-sm-6 col-xs-12 cont'>
 		              <div class='contact'>
 		                <h4>Senior Living and Apartments:</h4>
 		                <p>Property Manager/Leasing Agent: James Bender</p>
@@ -459,7 +459,7 @@
                 } // End if
             });
 </script>
-<!-- 
+<!--
 <script type="text/javascript">
 	var locations = [
 	  ['loan 1', 33.890542, 151.274856, 'address 1'],
@@ -482,25 +482,25 @@
 
 	function setMarkers(map,locations){
 	    var marker, i
-		for (i = 0; i < locations.length; i++){  
+		for (i = 0; i < locations.length; i++){
 		 	var loan = locations[i][0];
 			var lat = locations[i][1];
 			var long = locations[i][2];
 			var add =  locations[i][3];
 			latlngset = new google.maps.LatLng(lat, long);
-		  	var marker = new google.maps.Marker({  
-		        	map: map, title: loan , position: latlngset  
+		  	var marker = new google.maps.Marker({
+		        	map: map, title: loan , position: latlngset
 		        });
 		    map.setCenter(marker.getPosition())
-			var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add     
+			var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add
 			var infowindow = new google.maps.InfoWindow()
 
-			google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+			google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
 		        return function() {
 		           infowindow.setContent(content);
 		           infowindow.open(map,marker);
 		        };
-		    })(marker,content,infowindow)); 
+		    })(marker,content,infowindow));
 
 		}
 	}
