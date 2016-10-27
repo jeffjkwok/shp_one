@@ -226,38 +226,16 @@
             <h2 class='section-heading'>Find A Space</h2>
           </div>
             <div id='map'></div>
-           <!--  <script type="text/javascript">
-				function initMap(){
-				    var map = new google.maps.Map(document.getElementById('map'), {
-				      zoom: 10,
-				      center: new google.maps.LatLng(34.052234,-118.243685),
-				      mapTypeId: google.maps.MapTypeId.ROADMAP
-				    });
-
-				    var MyPlace = new google.maps.LatLng(34.052234, -118.243685);
-
-				    var marker = new google.maps.Marker({
-				        position: MyPlace,
-				        url: 'http://www.wikipedia.org/',
-				        title: 'This link opens Wikipedia home page',
-				        map: map
-				    });
-
-				    google.maps.event.addListener(marker, 'click', function() {
-				      window.location.href = marker.url;
-				    });
-				}
-			</script> -->
 			<script type="text/javascript">
 				var locations = [
-				  ['Pasadena/Inland Empire West', 34.145716,-118.098421, 'Eva Kwok', '2500 E. Colorado Blvd, Suite 509, Pasadena, CA 91107']
-				  // ['Inland Empire', 34.145716,-118.098421, '225 W. Hospitality Lane, Suite 206, San Bernardino, CA 92408'],
-				  // ['South Bay', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  // ['Long Beach', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  // ['Orange County North', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  // ['Orange County', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  // ['Orange County South', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
-				  // ['Senior Living and Apartments', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
+				  ['Pasadena/Inland Empire West', 34.145716,-118.098421, 'Eva Kwok', '2500 E. Colorado Blvd, Suite 509, Pasadena, CA 91107'],
+				  ['Inland Empire', 34.065284,-117.288475, 'Jamie Johnson' ,'225 W. Hospitality Lane, Suite 206, San Bernardino, CA 92408'],
+				  ['South Bay', 33.886049,-118.353017, 'Dwight Everest', '15901 Hawthorne Blvd, Suite 332, Lawndale, CA 90260'],
+				  ['Long Beach', 34.145716,-118.098421, 'Paul Justice', '3605 Long Beach Blvd, Suite 450, Long Beach, CA 90807'],
+				  ['Orange County North', 34.145716,-118.098421, 'Jennifer Lovelace', '1661 N. Raymond Ave, Suite 130, Anaheim, CA 92801'],
+				  ['Orange County', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
+				  ['Orange County South', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
+				  ['Senior Living and Apartments', 34.145716,-118.098421, '2500 E. Colorado Blvd, Pasadena, CA'],
 				  ];
 
 				function initMap(){
@@ -459,52 +437,5 @@
                 } // End if
             });
 </script>
-<!-- 
-<script type="text/javascript">
-	var locations = [
-	  ['loan 1', 33.890542, 151.274856, 'address 1'],
-	  ['loan 2', 33.923036, 151.259052, 'address 2'],
-	  ['loan 3', 34.028249, 151.157507, 'address 3'],
-	  ['loan 4', 33.80010128657071, 151.28747820854187, 'address 4'],
-	  ['loan 5', 33.950198, 151.259302, 'address 5']
-	  ];
-
-	function initMap(){
-	    var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 10,
-	      center: new google.maps.LatLng(34.052234,-118.243685),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
-	    });
-
-	    setMarkers(map,locations)
-
-	}
-
-	function setMarkers(map,locations){
-	    var marker, i
-		for (i = 0; i < locations.length; i++){  
-		 	var loan = locations[i][0];
-			var lat = locations[i][1];
-			var long = locations[i][2];
-			var add =  locations[i][3];
-			latlngset = new google.maps.LatLng(lat, long);
-		  	var marker = new google.maps.Marker({  
-		        	map: map, title: loan , position: latlngset  
-		        });
-		    map.setCenter(marker.getPosition())
-			var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add     
-			var infowindow = new google.maps.InfoWindow()
-
-			google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
-		        return function() {
-		           infowindow.setContent(content);
-		           infowindow.open(map,marker);
-		        };
-		    })(marker,content,infowindow)); 
-
-		}
-	}
-</script> -->
-
 </body>
 </html>
