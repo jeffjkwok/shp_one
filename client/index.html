@@ -1,451 +1,470 @@
 <!DOCTYPE html>
-<html ng-app = 'app'>
-<head>
-	<title>SHP</title>
-	<link rel="shortcut icon" href="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" type="image/png">
-	<script src="/angular/angular.js"></script>
-	<script src="/angular-route/angular-route.js"></script>
-	<script src="/jquery/dist/jquery.js"></script>
-	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/landing-page.css">
-	<script src="/bootstrap/dist/js/bootstrap.js"></script>
-	<script src='./assets/main.js'></script>
-</head>
-<body>
-	<nav id='myNavbar' class="navbar navbar-default navbar-fixed-top navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='true'>
-	        <span class='sr-only'>Toggle navigation</span>
-	        <span class='icon-bar'></span>
-	        <span class='icon-bar'></span>
-	        <span class='icon-bar'></span>
-	      </button>
-	      <a class="navbar-brand" href="#home">Sunny Hills-Palladium</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav navbar-right">
-	        <li class="active"><a href="#home">Home</a></li>
-	        <li><a href="#about">About Us</a></li>
-	        <li><a href="#properties">Our Properties</a></li>
-	        <li><a href="#find-a-property">Find A Space</a></li>
-	        <li><a href="#contact">Contact Us</a></li>
-	      </ul>
-	  </div>
-	  </div>
-	</nav>
+<html ng-app='app'>
+	<head>
+		<title>SHP</title>
+		<link rel="shortcut icon" href="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" type="image/png">
+		<script src="/angular/angular.js"></script>
+		<script src="/angular-route/angular-route.js"></script>
+		<script src="/jquery/dist/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/landing-page.css">
+		<script src="/bootstrap/dist/js/bootstrap.js"></script>
+		<script src='./assets/main.js'></script>
+	</head>
 
-	<img class='logo' src="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" alt="SHP Logo">
+	<body>
+		<nav id='myNavbar' class="navbar navbar-default navbar-fixed-top navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='true'>
+			        <span class='sr-only'>Toggle navigation</span>
+			        <span class='icon-bar'></span>
+			        <span class='icon-bar'></span>
+			        <span class='icon-bar'></span>
+			      </button>
+					<a class="navbar-brand" href="#home">Sunny Hills-Palladium</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="#home">Home</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#properties">Our Properties</a></li>
+						<li><a href="#find-a-property">Find A Space</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-	<div id="myCarousel" class="carousel slide" data-ride='carousel'>
-	    <div id='home' class="carousel-inner">
-	      <div class="item active">
-	        <img src='http://x.lnimg.com/photo/poster_768/d6fb4cd05a2d4bceb19cdc9ff33a021a.jpg'>
-	        <div class="container">
-	          <div class="carousel-caption">
-	            <h1>Sunny Hills Palladium</h1>
-	            <p class="lead">A Professional Property and Asset Management since 1993</p>
-	            <a class="btn btn-large btn-primary" href="#/find-a-property">Check Availability</a>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <img src="http://x.lnimg.com/photo/poster_768/850b1ce354344996926ccea636876cb8.jpg" alt="">
-	        <div class="container">
-	          <div class="carousel-caption">
-	            <h1>Another example headline.</h1>
-	            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-	            <a class="btn btn-large btn-primary" href="">Learn more</a>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <img src="http://x.lnimg.com/photo/poster_768/0f2252a8510c45c999665f726819beee.jpg" alt="">
-	        <div class="container">
-	          <div class="carousel-caption">
-	            <h1>One more for good measure.</h1>
-	            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-	            <a class="btn btn-large btn-primary" href="">Browse gallery</a>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	      <span class="sr-only">Previous</span></a>
-	      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	      <span class="sr-only">Next</span></a>
-	</div>
+		<img class='logo' src="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" alt="SHP Logo">
+
+		<div id="myCarousel" class="carousel slide" data-ride='carousel'>
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+				<div class="item active">
+					<img src='http://x.lnimg.com/photo/poster_768/d6fb4cd05a2d4bceb19cdc9ff33a021a.jpg'>
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Sunny Hills Palladium</h1>
+							<p class="lead">A Professional Property and Asset Management since 1993</p>
+							<a class="btn btn-large btn-primary" href="#/find-a-property">Check Availability</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="http://x.lnimg.com/photo/poster_768/850b1ce354344996926ccea636876cb8.jpg" alt="">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Another example headline.</h1>
+							<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							<a class="btn btn-large btn-primary" href="">Learn more</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="http://x.lnimg.com/photo/poster_768/0f2252a8510c45c999665f726819beee.jpg" alt="">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>One more for good measure.</h1>
+							<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							<a class="btn btn-large btn-primary" href="">Browse gallery</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span></a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span></a>
+		</div>
 
 
-  <div id='info' class='content-section-a'>
-  	<div class='container'>
-        <hr class='section-heading-spacer'>
-        <div class = 'clearfix'></div>
-        <h3 class='section-heading'>Who We Are</h3>
-  			<img class='anaheim' src="http://www.shpre.com/wp-content/uploads/2014/02/Screen-shot-2014-02-19-at-9.04.27-AM.png">
-  			<p class ='lead'>
-  				Sunny Hills Palladium, LLC (SHP) is a professional property and asset management company that has been in operation since 1993. The company was established to perform the property management responsibilities for a growing portfolio of privately owned commercial real estate. SHP continuously strives to provide our tenants with a combination of quality locations for their businesses and unbeatable value. Our portfolio consistently maintains high levels of occupancy due to our ability to provide our tenants with convenient and well maintained properties, flexible terms, and highly competitive rental rates. The SHP real estate portfolio consists of approximately 3,100,000 rentable square feet of commercial real estate space at 39 locations consisting a total of about 80 buildings. The portfolio consists primarily of Office properties but also a growing mix of Retail, Industrial, and Senior Living. All properties are located in Southern California spread throughout Los Angeles, Orange, Riverside, San Bernardino and San Diego Counties.
-  			</p>
-  	</div>
-</div>
-
-<div class="content-section-b row bottom">
-	<div class='container'>
-	  <div class="col-sm-4">
-	  	<h4>Find A Space For Lease</h4>
-	  	<div class='home_link'>
-	  		<img src="/assets/images/building.jpg">
-	  		<p class = 'lead'>Looking to lease a space? Click here to search for availablities.</p>
-	  	</div>
-	  </div>
-	  <div class="col-sm-4">
-	  	<h4>About Us</h4>
-	  	<div class='home_link'>
-	  		<img src="/assets/images/office.jpg">
-	  		<p class = 'lead'>Learn more about who we are, what we do, and how we can help you.</p>
-	  	</div>
-	  </div>
-	  <div class="col-sm-4">
-	  	<h4>Contact Us</h4>
-	  	<div class='home_link'>
-	  		<img src="/assets/images/contact.jpg">
-	  		<p class='lead'>Please contact us for inquiries about properties for lease.</p>
-	  	</div>
-	  </div>
-	</div>
-</div>
-
-<div id='about' class='content-section-a'>
-    <div class='container'>
-            <div class='spacing'>
-              <hr class='section-heading-spacer'>
-              <div class = 'clearfix'></div>
-              <h2 class='section-heading'>About Us</h2>
-              <img class='anaheim' src="http://www.shpre.com/wp-content/uploads/2014/02/1100-E.-Orangethorpe-Anaheim-Courtyard-2.jpg">
-              <p class ='lead'>
-                Sunny Hills-Palladium (SHP) professional property management and asset management company which has been in operation since 1993.  The SHP real estate portfolio is approximately 3,100,000 rentable square feet and consists of 39 properties and 80 buildings all located in Southern California with assets in Orange County, Long Beach, South Bay, Pasadena, San Diego, and the Inland Empire.
-              </p>
-            </div>
-            <div>
-	            <h3>Advantages of SHP</h3>
-	            <p class = 'lead'>As a vertically integrated property management company there are many advantages to choosing a SHP building as your company’s new home.  Some of these advantages include:</p>
-	            <h4>In-House Maintenance, HVAC, & Tenatn Improvement Department:</h4>
-	            <p class='lead'>SHP operates a robust maintenance department which employs technicians who specialize in specific areas, from heating, ventilation, and air conditioning to construction and tenant improvements, to general maintenance.  The ability to maintain our properties in-house allows us to address tenant work orders quickly and allows for superior quality control for our buildings operating systems and general maintenance.</p>
-	            <h4> In-House Leasing & Management: </h4>
-	            <p class='lead'>
-	              All of our properties are leased and managed by our employees, not outside brokers.  The same person who negotiates your lease manages the property you will be moving into.  By having one point of contact it creates a more efficient system for tenant improvements, work orders, and lease negotiation.</p>
-	            <h4>Speed:</h4>
-	            <p class='lead'>Our managers are decision-makers. This allows us to move faster in both negations and resolving tenant requests.</p>
-	            <h4>Value:</h4>
-	            <p class='lead'>Our properties are clean, well run, and well maintained.  Due to our size and scale we are able to negotiate with vendors to get the best possible pricing on everything from carpet to janitorial supplies and we pass the savings on to our tenants in the form of lower rental rates.</p>
-          </div>
-    </div>
-</div>
-
-<div id='properties' class='content-section-b'>
-    <div class='container'>
-      <div class='row'>
-          <div class='col-sm-6'>
-            <hr class='section-heading-spacer'>
-            <div class = 'clearfix'></div>
-            <h2 class='section-heading'>Our Districts</h2>
-          </div>
-      </div>
-      <div class='row'>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/2555-E.-Colorado-Blvd.-Pasadena-West-Elevation.jpg">
-	          <h4>Pasadena / Inland Empire West »</h4>
-	          <p>Includes properties in Pasadena, Racho Cucamonga and Upland.</p>
-	        </div>
-	      </div>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/225-325-Hospitality-Ln.-San-Bernardino-225-Front-Elevation-1.jpg">
-	          <h4>Inland Empire »</h4>
-	          <p>Includes properties in San Bernardino, Redlands, and Moreno Valley.</p>
-	        </div>
-	      </div>
-	  </div>
-	  <div class='row'>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/15901-Hawthorne-Blvd.-Lawndale-Front-Elevation.jpg">
-	          <h4>South Bay Portfolio »</h4>
-	          <p>South Bay: Includes properties in Torrance, Lawndale, and Gardena.</p>
-	        </div>
-	      </div>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/LB-for-Portfolio.png">
-	          <h4>Long Beach Portfolio »</h4>
-	          <p>Includes properties in Long Beach, Carson, Harbor City and Norwalk.</p>
-	        </div>
-	      </div>
-	  </div>
-	  <div class='row'>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/211-285-Imperial-Hwy.-Fullerton-Front-Overview.jpg">
-	          <h4>Orange County North »</h4>
-	          <p>Includes properties in Brea, Fullerton, Anaheim and Chino Hills.</p>
-	        </div>
-	      </div>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/10900-E.-183rd-St.-Cerritos-Front-Elevation.jpg">
-	          <h4>Orange County »</h4>
-	          <p>Includes properties in Cerritos, Buena Park, and Anaheim Hills.</p>
-	        </div>
-	      </div>
-	  </div>
-	  <div class='row'>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/600-W.-Santa-Ana-Blvd.-Front-Elevation-1.jpg">
-	          <h4>Orange County South »</h4>
-	          <p>Includes properties in Santa Ana, Westminster, Huntington Beach, Costa Mesa.</p>
-	        </div>
-	      </div>
-	      <div class='col-sm-6 col-xs-12 prop'>
-	        <div class='property'>
-	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/456-E.-Orangegrove-Blvd.-456-Flats-.jpg">
-	          <h4>Senior Living and Apartments »</h4>
-	          <p>Includes properties in Long Beach, Pasadena, and Hemet.</p>
-	        </div>
-	      </div>
-	   </div>
-    </div>
-</div>
-
-<div id='find-a-property' class='content-section-a'>
-    <div class='container'>
-      <div class='row'>
-          <div class='col-sm-6'>
-            <hr class='section-heading-spacer'>
-            <div class = 'clearfix'></div>
-            <h2 class='section-heading'>Find A Space</h2>
-          </div>
-            <div id='map'></div>
-			<script type="text/javascript">
-				var locations = [
-				  ['Pasadena/Inland Empire West', 34.145716,-118.098421, 'Eva Kwok', '2500 E. Colorado Blvd, Suite 509, Pasadena, CA 91107'],
-				  ['Inland Empire', 34.065284,-117.288475, 'Jamie Johnson' ,'225 W. Hospitality Lane, Suite 206, San Bernardino, CA 92408'],
-				  ['South Bay', 33.886049,-118.353017, 'Dwight Everest', '15901 Hawthorne Blvd, Suite 332, Lawndale, CA 90260'],
-				  ['Long Beach', 33.822697,-118.189654, 'Paul Justice', '3605 Long Beach Blvd, Suite 450, Long Beach, CA 90807'],
-				  ['Orange County North', 33.858222,-117.907501, 'Jennifer Lovelace', '1661 N. Raymond Ave, Suite 130, Anaheim, CA 92801'],
-				  ['Orange County', 33.859547,-118.026174, 'Brian Plotkin', '6131 Orangethorpe Ave, Suite 330, Buena Park, CA 90620'],
-				  ['Orange County South', 33.747934, -117.874402, 'Brandon Evans', '660 W. Santa Ana Blvd, Suite 800, Santa Ana, CA 92701'],
-				  ['Senior Living and Apartments', 33.818468, -118.197389, 'James Bender', '3360 Magnolia Ave, Long Beach, CA 90806'],
-				  ];
-
-				function initMap(){
-				    var map = new google.maps.Map(document.getElementById('map'), {
-				      zoom: 9,
-				      center: new google.maps.LatLng(33.971990, -117.727669),
-				      mapTypeId: google.maps.MapTypeId.ROADMAP
-				    });
-				    map.setCenter(new google.maps.LatLng(33.971990, -117.727669));
-				    setMarkers(map,locations);
-
-				}
-
-				function setMarkers(map,locations){
-				    var marker, i
-					for (i = 0; i < locations.length; i++){
-					 	var name = locations[i][0];
-						var lat = locations[i][1];
-						var long = locations[i][2];
-						var manager = locations[i][3]
-						var add =  locations[i][4];
-						latlngset = new google.maps.LatLng(lat, long);
-					  	var marker = new google.maps.Marker({
-					        	map: map, title: name , position: latlngset
-					        });
-					    map.setCenter(marker.getPosition())
-						var content = '<div class="info"><h4 class="info-title">SHP District: <br>'+name+'</h4><p>Manager: ' + manager + '</p><p>' + add  + '</p><p><a href="google.com">Find a Space</a></p></div>'  
-						var infowindow = new google.maps.InfoWindow()
-
-						google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
-					        return function() {
-					           infowindow.setContent(content);
-					           infowindow.open(map,marker);
-					        };
-					    })(marker,content,infowindow));
-
-					}
-				}
-			</script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2rqTRzxmNggw_C3sEjVDoYDHQsS_isbM&callback=initMap">
-			</script>
-      </div>
-    </div>
-</div>
-
-<div id='contact' class='content-section-b'>
-    <div class='container'>
-          <div class='col-sm-12'>
-            <div class='spacing'>
-              <hr class='section-heading-spacer'>
-              <div class = 'clearfix'></div>
-              <h2 class='section-heading'>Contact Us</h2>
-	          <div class='row'>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Pasadena / Inland Empire West:</h4>
-		                <p>Property Manager/Leasing Agent: Eva Kwok</p>
-		                <p>2500 E. Foothill Blvd, Suite 509</p>
-		                <p>Pasadena, CA 91107</p>
-		                <p>Phone: 626-304-0310</p>
-		                <p>Fax: 626-304-0315</p>
-		              </div>
-		            </div>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Inland Empire:</h4>
-		                <p>Property Manager/Leasing Agent: Jamie Johnson</p>
-		                <p>225 W. Hospitality Lane, Suite 206</p>
-		                <p>San Bernardino, CA 92408</p>
-		                <p>Phone: 909-890-1226</p>
-		                <p>Fax: 909-890-3630</p>
-		              </div>
-		            </div>
-	           </div>
-	           <div class='row'>
-	            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>South Bay:</h4>
-		                <p>Property Manager/Leasing Agent: Dwight Everest</p>
-		                <p>15901 Hawthorne Blvd, Suite 332</p>
-		                <p>Lawndale, CA 90260</p>
-		                <p>Phone: 310-542-2303</p>
-		                <p>Fax: 310-542-2314</p>
-		              </div>
-		            </div>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Long Beach:</h4>
-		                <p>Property Manager/Leasing Agent: Paul Justice</p>
-		                <p>3605 Long Becah Blvd, Suite 450</p>
-		                <p>Long Beach, CA 90807</p>
-		                <p>Phone:562-997-8897</p>
-		                <p>Fax: 562-997-8907</p>
-		              </div>
-		            </div>
-	           	</div>
-	           	<div class='row'>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Orange County North:</h4>
-		                <p>Property Manager/Leasing Agent: Jennifer Lovelace</p>
-		                <p>1661 N. Raymond Ave, Suite 130</p>
-		                <p>Anaheim, CA 92801</p>
-		                <p>Phone: 714-680-8300</p>
-		                <p>Fax: 714-680-8341</p>
-		              </div>
-		            </div>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Orange County:</h4>
-		                <p>Property Manager/Leasing Agent: Brian Plotkin</p>
-		                <p>6131 Orangethorpe Ave, Suite 330</p>
-		                <p>Buena Park, CA 90620</p>
-		                <p>Phone: 714-523-7116</p>
-		                <p>Fax: 714-523-8119</p>
-		              </div>
-		            </div>
-		        </div>
-	            <div class='row'>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Orange County South:</h4>
-		                <p>Property Manager/Leasing Agent: Brandon Evans</p>
-		                <p>660 W. Santa Ana Blvd, Suite 800</p>
-		                <p>Santa Ana, CA 92701</p>
-		                <p>Phone: 714-550-1126</p>
-		                <p>Fax: 714-972-0616</p>
-		              </div>
-		            </div>
-		            <div class='col-sm-6 col-xs-12 cont'>
-		              <div class='contact'>
-		                <h4>Senior Living and Apartments:</h4>
-		                <p>Property Manager/Leasing Agent: James Bender</p>
-		                <p>3360 Magnolia Ave</p>
-		                <p>Long Beach, CA 90806</p>
-		                <p>Phone: 562-595-1559</p>
-		                <p>Fax: 562-427-2280</p>
-		              </div>
-		            </div>
-		        </div>
-            </div>
-          </div>
-    </div>
-</div>
-
-<footer>
-	<div class ='container'>
-		<div class='row'>
-			<div class='col-lg-12'>
-				<ul class='list-inline'>
-					<li>
-						<a href="#home">Home</a>
-					</li>
-					<li class='footer-menu-divider'>.</li>
-					<li>
-						<a href="#about">About Us</a>
-					</li>
-					<li class='footer-menu-divider'>.</li>
-					<li>
-						<a href="#properties">Our Properties</a>
-					</li>
-					<li class='footer-menu-divider'>.</li>
-					<li>
-						<a href="#find-a-property">Find a Property</a>
-					</li>
-					<li class='footer-menu-divider'>.</li>
-					<li>
-						<a href="#contact">Contact</a>
-					</li>
-				</ul>
-				<p class='copyright text-muted small'>
-					© Sunny Hill Palladium, LLC (SHP)
+		<div id='info' class='content-section-a'>
+			<div class='container'>
+				<hr class='section-heading-spacer'>
+				<div class='clearfix'></div>
+				<h3 class='section-heading'>Who We Are</h3>
+				<img class='anaheim' src="http://www.shpre.com/wp-content/uploads/2014/02/Screen-shot-2014-02-19-at-9.04.27-AM.png">
+				<p class='lead'>
+					Sunny Hills Palladium, LLC (SHP) is a professional property and asset management company that has been in operation since 1993. The company was established to perform the property management responsibilities for a growing portfolio of privately owned
+					commercial real estate. SHP continuously strives to provide our tenants with a combination of quality locations for their businesses and unbeatable value. Our portfolio consistently maintains high levels of occupancy due to our ability to provide
+					our tenants with convenient and well maintained properties, flexible terms, and highly competitive rental rates. The SHP real estate portfolio consists of approximately 3,100,000 rentable square feet of commercial real estate space at 39 locations
+					consisting a total of about 80 buildings. The portfolio consists primarily of Office properties but also a growing mix of Retail, Industrial, and Senior Living. All properties are located in Southern California spread throughout Los Angeles, Orange,
+					Riverside, San Bernardino and San Diego Counties.
 				</p>
 			</div>
 		</div>
-	</div>
-</footer>
-<script>
-	$(".navbar a").on("click", function(){
-	   $(".navbar").find(".active").removeClass("active");
-	   $(this).parent().addClass("active");
-	});
 
-	$(".navbar a, footer a").on('click', function(event) {
-                // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-            // Store hash
-            var hash = this.hash;
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-                }, 800, function(){
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
-        } // End if
-    });
+		<div class="content-section-b row bottom">
+			<div class='container'>
+				<div class="col-sm-4">
+					<h4>Find A Space For Lease</h4>
+					<div class='home_link'>
+						<img src="/assets/images/building.jpg">
+						<p class='lead'>Looking to lease a space? Click here to search for availablities.</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<h4>About Us</h4>
+					<div class='home_link'>
+						<img src="/assets/images/office.jpg">
+						<p class='lead'>Learn more about who we are, what we do, and how we can help you.</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<h4>Contact Us</h4>
+					<div class='home_link'>
+						<img src="/assets/images/contact.jpg">
+						<p class='lead'>Please contact us for inquiries about properties for lease.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	$(".property").hover(function(){
-		$(this).css('cursor', 'pointer');
-		$(this).css('opacity', '0.75')
-	}, function(){
-		$(this).css('opacity', '1')
-	})
-</script>
-</body>
+		<div id='about' class='content-section-a'>
+			<div class='container'>
+				<div class='spacing'>
+					<hr class='section-heading-spacer'>
+					<div class='clearfix'></div>
+					<h2 class='section-heading'>About Us</h2>
+					<img class='anaheim' src="http://www.shpre.com/wp-content/uploads/2014/02/1100-E.-Orangethorpe-Anaheim-Courtyard-2.jpg">
+					<p class='lead'>
+						Sunny Hills-Palladium (SHP) professional property management and asset management company which has been in operation since 1993. The SHP real estate portfolio is approximately 3,100,000 rentable square feet and consists of 39 properties and 80 buildings
+						all located in Southern California with assets in Orange County, Long Beach, South Bay, Pasadena, San Diego, and the Inland Empire.
+					</p>
+				</div>
+				<div>
+					<h3>Advantages of SHP</h3>
+					<p class='lead'>As a vertically integrated property management company there are many advantages to choosing a SHP building as your company’s new home. Some of these advantages include:</p>
+					<h4>In-House Maintenance, HVAC, & Tenatn Improvement Department:</h4>
+					<p class='lead'>SHP operates a robust maintenance department which employs technicians who specialize in specific areas, from heating, ventilation, and air conditioning to construction and tenant improvements, to general maintenance. The ability to maintain our properties
+						in-house allows us to address tenant work orders quickly and allows for superior quality control for our buildings operating systems and general maintenance.</p>
+					<h4> In-House Leasing & Management: </h4>
+					<p class='lead'>
+						All of our properties are leased and managed by our employees, not outside brokers. The same person who negotiates your lease manages the property you will be moving into. By having one point of contact it creates a more efficient system for tenant improvements,
+						work orders, and lease negotiation.</p>
+					<h4>Speed:</h4>
+					<p class='lead'>Our managers are decision-makers. This allows us to move faster in both negations and resolving tenant requests.</p>
+					<h4>Value:</h4>
+					<p class='lead'>Our properties are clean, well run, and well maintained. Due to our size and scale we are able to negotiate with vendors to get the best possible pricing on everything from carpet to janitorial supplies and we pass the savings on to our tenants in
+						the form of lower rental rates.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id='properties' class='content-section-b'>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-sm-6'>
+						<hr class='section-heading-spacer'>
+						<div class='clearfix'></div>
+						<h2 class='section-heading'>Our Districts</h2>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/2555-E.-Colorado-Blvd.-Pasadena-West-Elevation.jpg">
+							<h4>Pasadena / Inland Empire West »</h4>
+							<p>Includes properties in Pasadena, Racho Cucamonga and Upland.</p>
+						</div>
+					</div>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/225-325-Hospitality-Ln.-San-Bernardino-225-Front-Elevation-1.jpg">
+							<h4>Inland Empire »</h4>
+							<p>Includes properties in San Bernardino, Redlands, and Moreno Valley.</p>
+						</div>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/15901-Hawthorne-Blvd.-Lawndale-Front-Elevation.jpg">
+							<h4>South Bay Portfolio »</h4>
+							<p>South Bay: Includes properties in Torrance, Lawndale, and Gardena.</p>
+						</div>
+					</div>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/LB-for-Portfolio.png">
+							<h4>Long Beach Portfolio »</h4>
+							<p>Includes properties in Long Beach, Carson, Harbor City and Norwalk.</p>
+						</div>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/211-285-Imperial-Hwy.-Fullerton-Front-Overview.jpg">
+							<h4>Orange County North »</h4>
+							<p>Includes properties in Brea, Fullerton, Anaheim and Chino Hills.</p>
+						</div>
+					</div>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/10900-E.-183rd-St.-Cerritos-Front-Elevation.jpg">
+							<h4>Orange County »</h4>
+							<p>Includes properties in Cerritos, Buena Park, and Anaheim Hills.</p>
+						</div>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/600-W.-Santa-Ana-Blvd.-Front-Elevation-1.jpg">
+							<h4>Orange County South »</h4>
+							<p>Includes properties in Santa Ana, Westminster, Huntington Beach, Costa Mesa.</p>
+						</div>
+					</div>
+					<div class='col-sm-6 col-xs-12 prop'>
+						<div class='property'>
+							<img src="http://www.shpre.com/wp-content/uploads/2014/02/456-E.-Orangegrove-Blvd.-456-Flats-.jpg">
+							<h4>Senior Living and Apartments »</h4>
+							<p>Includes properties in Long Beach, Pasadena, and Hemet.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id='find-a-property' class='content-section-a'>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-sm-6'>
+						<hr class='section-heading-spacer'>
+						<div class='clearfix'></div>
+						<h2 class='section-heading'>Find A Space</h2>
+					</div>
+					<div id='map'></div>
+					<script type="text/javascript">
+						var locations = [
+							['Pasadena/Inland Empire West', 34.145716, -118.098421, 'Eva Kwok', '2500 E. Colorado Blvd, Suite 509, Pasadena, CA 91107'],
+							['Inland Empire', 34.065284, -117.288475, 'Jamie Johnson', '225 W. Hospitality Lane, Suite 206, San Bernardino, CA 92408'],
+							['South Bay', 33.886049, -118.353017, 'Dwight Everest', '15901 Hawthorne Blvd, Suite 332, Lawndale, CA 90260'],
+							['Long Beach', 33.822697, -118.189654, 'Paul Justice', '3605 Long Beach Blvd, Suite 450, Long Beach, CA 90807'],
+							['Orange County North', 33.858222, -117.907501, 'Jennifer Lovelace', '1661 N. Raymond Ave, Suite 130, Anaheim, CA 92801'],
+							['Orange County', 33.859547, -118.026174, 'Brian Plotkin', '6131 Orangethorpe Ave, Suite 330, Buena Park, CA 90620'],
+							['Orange County South', 33.747934, -117.874402, 'Brandon Evans', '660 W. Santa Ana Blvd, Suite 800, Santa Ana, CA 92701'],
+							['Senior Living and Apartments', 33.818468, -118.197389, 'James Bender', '3360 Magnolia Ave, Long Beach, CA 90806'],
+						];
+
+						function initMap() {
+							var map = new google.maps.Map(document.getElementById('map'), {
+								zoom: 9,
+								center: new google.maps.LatLng(33.971990, -117.727669),
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+							});
+							map.setCenter(new google.maps.LatLng(33.971990, -117.727669));
+							setMarkers(map, locations);
+
+						}
+
+						function setMarkers(map, locations) {
+							var marker, i
+							for (i = 0; i < locations.length; i++) {
+								var name = locations[i][0];
+								var lat = locations[i][1];
+								var long = locations[i][2];
+								var manager = locations[i][3]
+								var add = locations[i][4];
+								latlngset = new google.maps.LatLng(lat, long);
+								var marker = new google.maps.Marker({
+									map: map,
+									title: name,
+									position: latlngset
+								});
+								map.setCenter(marker.getPosition())
+								var content = '<div class="info"><h4 class="info-title">SHP District: <br>' + name + '</h4><p>Manager: ' + manager + '</p><p>' + add + '</p><p><a href="google.com">Find a Space</a></p></div>'
+								var infowindow = new google.maps.InfoWindow()
+
+								google.maps.event.addListener(marker, 'click', (function(marker, content, infowindow) {
+									return function() {
+										infowindow.setContent(content);
+										infowindow.open(map, marker);
+									};
+								})(marker, content, infowindow));
+
+							}
+						}
+					</script>
+					<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2rqTRzxmNggw_C3sEjVDoYDHQsS_isbM&callback=initMap">
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<div id='contact' class='content-section-b'>
+			<div class='container'>
+				<div class='col-sm-12'>
+					<div class='spacing'>
+						<hr class='section-heading-spacer'>
+						<div class='clearfix'></div>
+						<h2 class='section-heading'>Contact Us</h2>
+						<div class='row'>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Pasadena / Inland Empire West:</h4>
+									<p>Property Manager/Leasing Agent: Eva Kwok</p>
+									<p>2500 E. Foothill Blvd, Suite 509</p>
+									<p>Pasadena, CA 91107</p>
+									<p>Phone: 626-304-0310</p>
+									<p>Fax: 626-304-0315</p>
+								</div>
+							</div>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Inland Empire:</h4>
+									<p>Property Manager/Leasing Agent: Jamie Johnson</p>
+									<p>225 W. Hospitality Lane, Suite 206</p>
+									<p>San Bernardino, CA 92408</p>
+									<p>Phone: 909-890-1226</p>
+									<p>Fax: 909-890-3630</p>
+								</div>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>South Bay:</h4>
+									<p>Property Manager/Leasing Agent: Dwight Everest</p>
+									<p>15901 Hawthorne Blvd, Suite 332</p>
+									<p>Lawndale, CA 90260</p>
+									<p>Phone: 310-542-2303</p>
+									<p>Fax: 310-542-2314</p>
+								</div>
+							</div>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Long Beach:</h4>
+									<p>Property Manager/Leasing Agent: Paul Justice</p>
+									<p>3605 Long Becah Blvd, Suite 450</p>
+									<p>Long Beach, CA 90807</p>
+									<p>Phone:562-997-8897</p>
+									<p>Fax: 562-997-8907</p>
+								</div>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Orange County North:</h4>
+									<p>Property Manager/Leasing Agent: Jennifer Lovelace</p>
+									<p>1661 N. Raymond Ave, Suite 130</p>
+									<p>Anaheim, CA 92801</p>
+									<p>Phone: 714-680-8300</p>
+									<p>Fax: 714-680-8341</p>
+								</div>
+							</div>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Orange County:</h4>
+									<p>Property Manager/Leasing Agent: Brian Plotkin</p>
+									<p>6131 Orangethorpe Ave, Suite 330</p>
+									<p>Buena Park, CA 90620</p>
+									<p>Phone: 714-523-7116</p>
+									<p>Fax: 714-523-8119</p>
+								</div>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Orange County South:</h4>
+									<p>Property Manager/Leasing Agent: Brandon Evans</p>
+									<p>660 W. Santa Ana Blvd, Suite 800</p>
+									<p>Santa Ana, CA 92701</p>
+									<p>Phone: 714-550-1126</p>
+									<p>Fax: 714-972-0616</p>
+								</div>
+							</div>
+							<div class='col-sm-6 col-xs-12 cont'>
+								<div class='contact'>
+									<h4>Senior Living and Apartments:</h4>
+									<p>Property Manager/Leasing Agent: James Bender</p>
+									<p>3360 Magnolia Ave</p>
+									<p>Long Beach, CA 90806</p>
+									<p>Phone: 562-595-1559</p>
+									<p>Fax: 562-427-2280</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-lg-12'>
+						<ul class='list-inline'>
+							<li>
+								<a href="#home">Home</a>
+							</li>
+							<li class='footer-menu-divider'>.</li>
+							<li>
+								<a href="#about">About Us</a>
+							</li>
+							<li class='footer-menu-divider'>.</li>
+							<li>
+								<a href="#properties">Our Properties</a>
+							</li>
+							<li class='footer-menu-divider'>.</li>
+							<li>
+								<a href="#find-a-property">Find a Property</a>
+							</li>
+							<li class='footer-menu-divider'>.</li>
+							<li>
+								<a href="#contact">Contact</a>
+							</li>
+						</ul>
+						<p class='copyright text-muted small'>
+							© Sunny Hill Palladium, LLC (SHP)
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			$(".navbar a").on("click", function() {
+				$(".navbar").find(".active").removeClass("active");
+				$(this).parent().addClass("active");
+			});
+
+			$(".navbar a, footer a").on('click', function(event) {
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+					// Store hash
+					var hash = this.hash;
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function() {
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if
+			});
+
+			$(".property").hover(function() {
+				$(this).css('cursor', 'pointer');
+				$(this).css('opacity', '0.75')
+			}, function() {
+				$(this).css('opacity', '1')
+			})
+		</script>
+	</body>
+
 </html>
