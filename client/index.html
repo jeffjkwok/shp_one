@@ -45,7 +45,7 @@
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>
-
+			<div id='home' class="carousel-inner">
 				<div class="item active">
 					<img src='http://x.lnimg.com/photo/poster_768/d6fb4cd05a2d4bceb19cdc9ff33a021a.jpg'>
 					<div class="container">
@@ -464,6 +464,58 @@
 			}, function() {
 				$(this).css('opacity', '1')
 			})
+
+			// $(function(){
+            //     // Get all of the gradient images and loop
+            //     // over them using jQuery implicit iteration.
+            //     $( "img.gradient" ).each(
+            //         function( intIndex ){
+            //             var jImg = $( this );
+            //             var jParent = null;
+            //             var jDiv = null;
+            //             var intStep = 0;
+            //             // Get the parent
+            //             jParent = jImg.parent();
+            //             // Make sure the parent is position
+            //             // relatively so that the graident steps
+            //             // can be positioned absolutely within it.
+            //             jParent
+            //                 .css( "position", "relative" )
+            //                 .width( jImg.width() )
+            //                 .height( jImg.height() )
+            //             ;
+            //             // Create the gradient elements. Here, we
+            //             // are hard-coding the number of steps,
+            //             // but this could be abstracted out.
+            //             for (
+            //                 intStep = 0 ;
+            //                 intStep <= 20 ;
+            //                 intStep++
+            //                 ){
+            //                 // Create a fade level.
+            //                 jDiv = $( "<div></div>" );
+            //                 // Set the properties on the fade level.
+            //                 jDiv
+            //                     .css (
+            //                         {
+            //                             backgroundColor: "#FFFFFF",
+            //                             opacity: (intStep * 5 / 100),
+            //                             bottom: ((100 - (intStep * 5) ) + "px"),
+            //                             left: "0px",
+            //                             position: "absolute"
+            //                         }
+            //                         )
+            //                     .width( jImg.width() )
+            //                     .height( 5 )
+            //                 ;
+            //                 // Add the fade level to the
+            //                 // containing parent.
+            //                 jParent.append( jDiv );
+            //             }
+            //         }
+            //         );
+            // 	}
+            // );
 		</script>
 	</body>
 
