@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/landing-page.css">
 	<script src="/bootstrap/dist/js/bootstrap.js"></script>
-	<script src='./assets/main.js'></script>
+	<!-- <script src='./assets/main.js'></script> -->
 </head>
 <body>
 	<nav id='myNavbar' class="navbar navbar-default navbar-fixed-top navbar-inverse">
@@ -21,15 +21,15 @@
 	        <span class='icon-bar'></span>
 	        <span class='icon-bar'></span>
 	      </button>
-	      <a class="navbar-brand" href="#home">Sunny Hills-Palladium</a>
+	      <a class="navbar-brand" href="/property">Sunny Hills-Palladium</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li class="active"><a href="#home">Home</a></li>
-	        <li><a href="#about">About Us</a></li>
-	        <li><a href="#properties">Our Properties</a></li>
-	        <li><a href="#find-a-property">Find A Space</a></li>
-	        <li><a href="#contact">Contact Us</a></li>
+	        <li class="active"><a href='#' data-target="#home">Home</a></li>
+	        <li><a href='#' data-target="#about">About Us</a></li>
+	        <li><a href='#' data-target="#properties">Our Properties</a></li>
+	        <li><a href='#' data-target="#find-a-property">Find A Space</a></li>
+	        <li><a href='#' data-target="#contact">Contact Us</a></li>
 	      </ul>
 	  </div>
 	  </div>
@@ -131,7 +131,7 @@
             <div>
 	            <h3>Advantages of SHP</h3>
 	            <p class = 'lead'>As a vertically integrated property management company there are many advantages to choosing a SHP building as your company’s new home.  Some of these advantages include:</p>
-	            <h4>In-House Maintenance, HVAC, & Tenatn Improvement Department:</h4>
+	            <h4>In-House Maintenance, HVAC, & Tenant Improvement Department:</h4>
 	            <p class='lead'>SHP operates a robust maintenance department which employs technicians who specialize in specific areas, from heating, ventilation, and air conditioning to construction and tenant improvements, to general maintenance.  The ability to maintain our properties in-house allows us to address tenant work orders quickly and allows for superior quality control for our buildings operating systems and general maintenance.</p>
 	            <h4> In-House Leasing & Management: </h4>
 	            <p class='lead'>
@@ -173,14 +173,14 @@
 	      <div class='col-sm-6 col-xs-12 prop'>
 	        <div class='property'>
 	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/15901-Hawthorne-Blvd.-Lawndale-Front-Elevation.jpg">
-	          <h4>South Bay Portfolio »</h4>
+	          <h4>South Bay »</h4>
 	          <p>South Bay: Includes properties in Torrance, Lawndale, and Gardena.</p>
 	        </div>
 	      </div>
 	      <div class='col-sm-6 col-xs-12 prop'>
 	        <div class='property'>
 	          <img src="http://www.shpre.com/wp-content/uploads/2014/02/LB-for-Portfolio.png">
-	          <h4>Long Beach Portfolio »</h4>
+	          <h4>Long Beach »</h4>
 	          <p>Includes properties in Long Beach, Carson, Harbor City and Norwalk.</p>
 	        </div>
 	      </div>
@@ -446,6 +446,36 @@
 	}, function(){
 		$(this).css('opacity', '1')
 	})
+
+	$(document).ready(function () {
+		$('a').on("click",function(e){
+			$($(this).data('target')).scrollTo();
+		});
+	});
+
+		/*
+		* ScrollToElement 1.0
+		* Copyright (c) 2009 Lauri Huovila, Neovica Oy
+		*  lauri.huovila@neovica.fi
+		*  http://www.neovica.fi
+		*  
+		* Dual licensed under the MIT and GPL licenses.
+		*/
+
+	(function($) {
+	    $.scrollToElement = function($element, speed) {
+	        speed = speed || 750;
+	        $("html, body").animate({
+	            scrollTop: $element.offset().top,
+	            scrollLeft: $element.offset().left
+	        }, speed);
+	        return $element;
+	    };
+	    $.fn.scrollTo = function(speed) {
+	        speed = speed || "normal";
+	        return $.scrollToElement(this, speed);
+	    };
+	})(jQuery);
 </script>
 </body>
 </html>
