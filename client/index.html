@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html ng-app='app'>
-	<head>
-		<title>SHP</title>
-		<link rel="shortcut icon" href="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" type="image/png">
-		<script src="/angular/angular.js"></script>
-		<script src="/angular-route/angular-route.js"></script>
-		<script src="/jquery/dist/jquery.js"></script>
-		<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/landing-page.css">
-		<script src="/bootstrap/dist/js/bootstrap.js"></script>
-		<script src='./assets/main.js'></script>
-	</head>
-
+<html ng-app = 'app'>
+<head>
+	<title>SHP</title>
+	<link rel="shortcut icon" href="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" type="image/png">
+	<script src="/angular/angular.js"></script>
+	<script src="/angular-route/angular-route.js"></script>
+	<script src="/jquery/dist/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/landing-page.css">
+	<script src="/bootstrap/dist/js/bootstrap.js"></script>
+	<!-- <script src='./assets/main.js'></script> -->
+</head>
 	<body>
 		<nav id='myNavbar' class="navbar navbar-default navbar-fixed-top navbar-inverse">
 			<div class="container-fluid">
@@ -86,6 +85,7 @@
 		</div>
 
 
+
 		<div id='info' class='content-section-a'>
 			<div class='container'>
 				<hr class='section-heading-spacer'>
@@ -128,36 +128,32 @@
 			</div>
 		</div>
 
-		<div id='about' class='content-section-a'>
-			<div class='container'>
-				<div class='spacing'>
-					<hr class='section-heading-spacer'>
-					<div class='clearfix'></div>
-					<h2 class='section-heading'>About Us</h2>
-					<img class='anaheim' src="http://www.shpre.com/wp-content/uploads/2014/02/1100-E.-Orangethorpe-Anaheim-Courtyard-2.jpg">
-					<p class='lead'>
-						Sunny Hills-Palladium (SHP) professional property management and asset management company which has been in operation since 1993. The SHP real estate portfolio is approximately 3,100,000 rentable square feet and consists of 39 properties and 80 buildings
-						all located in Southern California with assets in Orange County, Long Beach, South Bay, Pasadena, San Diego, and the Inland Empire.
-					</p>
-				</div>
-				<div>
-					<h3>Advantages of SHP</h3>
-					<p class='lead'>As a vertically integrated property management company there are many advantages to choosing a SHP building as your company’s new home. Some of these advantages include:</p>
-					<h4>In-House Maintenance, HVAC, & Tenatn Improvement Department:</h4>
-					<p class='lead'>SHP operates a robust maintenance department which employs technicians who specialize in specific areas, from heating, ventilation, and air conditioning to construction and tenant improvements, to general maintenance. The ability to maintain our properties
-						in-house allows us to address tenant work orders quickly and allows for superior quality control for our buildings operating systems and general maintenance.</p>
-					<h4> In-House Leasing & Management: </h4>
-					<p class='lead'>
-						All of our properties are leased and managed by our employees, not outside brokers. The same person who negotiates your lease manages the property you will be moving into. By having one point of contact it creates a more efficient system for tenant improvements,
-						work orders, and lease negotiation.</p>
-					<h4>Speed:</h4>
-					<p class='lead'>Our managers are decision-makers. This allows us to move faster in both negations and resolving tenant requests.</p>
-					<h4>Value:</h4>
-					<p class='lead'>Our properties are clean, well run, and well maintained. Due to our size and scale we are able to negotiate with vendors to get the best possible pricing on everything from carpet to janitorial supplies and we pass the savings on to our tenants in
-						the form of lower rental rates.</p>
-				</div>
-			</div>
-		</div>
+<div id='about' class='content-section-a'>
+    <div class='container'>
+            <div class='spacing'>
+              <hr class='section-heading-spacer'>
+              <div class = 'clearfix'></div>
+              <h2 class='section-heading'>About Us</h2>
+              <img class='anaheim' src="http://www.shpre.com/wp-content/uploads/2014/02/1100-E.-Orangethorpe-Anaheim-Courtyard-2.jpg">
+              <p class ='lead'>
+                Sunny Hills-Palladium (SHP) professional property management and asset management company which has been in operation since 1993.  The SHP real estate portfolio is approximately 3,100,000 rentable square feet and consists of 39 properties and 80 buildings all located in Southern California with assets in Orange County, Long Beach, South Bay, Pasadena, San Diego, and the Inland Empire.
+              </p>
+            </div>
+            <div>
+	            <h3>Advantages of SHP</h3>
+	            <p class = 'lead'>As a vertically integrated property management company there are many advantages to choosing a SHP building as your company’s new home.  Some of these advantages include:</p>
+	            <h4>In-House Maintenance, HVAC, & Tenant Improvement Department:</h4>
+	            <p class='lead'>SHP operates a robust maintenance department which employs technicians who specialize in specific areas, from heating, ventilation, and air conditioning to construction and tenant improvements, to general maintenance.  The ability to maintain our properties in-house allows us to address tenant work orders quickly and allows for superior quality control for our buildings operating systems and general maintenance.</p>
+	            <h4> In-House Leasing & Management: </h4>
+	            <p class='lead'>
+	              All of our properties are leased and managed by our employees, not outside brokers.  The same person who negotiates your lease manages the property you will be moving into.  By having one point of contact it creates a more efficient system for tenant improvements, work orders, and lease negotiation.</p>
+	            <h4>Speed:</h4>
+	            <p class='lead'>Our managers are decision-makers. This allows us to move faster in both negations and resolving tenant requests.</p>
+	            <h4>Value:</h4>
+	            <p class='lead'>Our properties are clean, well run, and well maintained.  Due to our size and scale we are able to negotiate with vendors to get the best possible pricing on everything from carpet to janitorial supplies and we pass the savings on to our tenants in the form of lower rental rates.</p>
+          </div>
+    </div>
+</div>
 
 		<div id='properties' class='content-section-b'>
 			<div class='container'>
@@ -467,4 +463,40 @@
 		</script>
 	</body>
 
+	<!-- $(".property").hover(function(){
+		$(this).css('cursor', 'pointer');
+		$(this).css('opacity', '0.75')
+	}, function(){
+		$(this).css('opacity', '1')
+	})
+
+	$(document).ready(function () {
+		$('a').on("click",function(e){
+			$($(this).data('target')).scrollTo();
+		});
+	});
+
+		/*
+		* ScrollToElement 1.0
+		* Copyright (c) 2009 Lauri Huovila, Neovica Oy
+		*  lauri.huovila@neovica.fi
+		*  http://www.neovica.fi
+		*  
+		* Dual licensed under the MIT and GPL licenses.
+		*/
+
+	(function($) {
+	    $.scrollToElement = function($element, speed) {
+	        speed = speed || 750;
+	        $("html, body").animate({
+	            scrollTop: $element.offset().top,
+	            scrollLeft: $element.offset().left
+	        }, speed);
+	        return $element;
+	    };
+	    $.fn.scrollTo = function(speed) {
+	        speed = speed || "normal";
+	        return $.scrollToElement(this, speed);
+	    };
+	})(jQuery); -->
 </html>

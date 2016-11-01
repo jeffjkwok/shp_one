@@ -6,6 +6,14 @@ var express = require('express'),
 	port = process.env.PORT || 8000,
 	session = require('express-session');
 
+app.set('trust proxy', 1)
+app.use(session({
+	secret: 'grumpy cat',
+	resave: false,
+	saveUninitialized: true,
+	cookie: {secure: false}
+}))
+
 app.use(express.static(path.join(root, 'client')));
 app.use(express.static(path.join(root, 'bower_components')));
 app.use(express.static(path.join(root, 'node_modules')));
