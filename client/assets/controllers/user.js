@@ -22,7 +22,7 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 	$scope.createUser = function(){
 		console.log($scope.user)
 		userFactory.createUser($scope.user, function(data){
-			$scope.users = {};
+			$scope.user = {};
 			getUsers();
 		})
 	}
@@ -40,19 +40,22 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 		$location.url('/users/edit/'+id)
 	}
 
+	// checks the URL to see if there is an unique ID if there is then it pulls the user of that specific ID
 	if($routeParams.id){
 		userFactory.getUser($routeParams.id, function(data){
 			$scope.userToUpdate = data
 		})
 	}
 
+	// Function to delete a user on the "manage users page"
 	$scope.deleteUser = function(id){
+		console.log("scope delete")
 		userFactory.deleteUser(id, function(data){
-			console.log('user deleted')
+			getUsers()
 		})
 	}
 
-	// $scope.backToUsers = function(){
-	// 	$location.url('/users')
-	// }
+	$scope.backToUsers = function(){
+		$location.url('/users')
+	}
 }])

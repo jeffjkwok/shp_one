@@ -42,6 +42,7 @@ app.factory ('userFactory', ['$http', function($http){
 	}
 
 	factory.deleteUser = function(id, callback){
+		console.log('factory delete')
 		$http.delete('/admin/user/'+id).then(function(returnedData){
 			callback()
 		})

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app = 'app'>
+<html>
 <head>
 	<title>SHP</title>
 	<link rel="shortcut icon" href="http://www.shpre.com/wp-content/uploads/2014/02/logo.png" type="image/png">
@@ -25,11 +25,11 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#home">Home</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#properties">Our Properties</a></li>
-						<li><a href="#find-a-property">Find A Space</a></li>
-						<li><a href="#contact">Contact Us</a></li>
+						<li class="active"><a data-target="#home">Home</a></li>
+						<li><a data-target="#about">About Us</a></li>
+						<li><a data-target="#properties">Our Properties</a></li>
+						<li><a data-target="#find-a-property">Find A Space</a></li>
+						<li><a data-target="#contact">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>
@@ -461,94 +461,28 @@
 				$(this).css('opacity', '1')
 			})
 
-			// $(function(){
-            //     // Get all of the gradient images and loop
-            //     // over them using jQuery implicit iteration.
-            //     $( "img.gradient" ).each(
-            //         function( intIndex ){
-            //             var jImg = $( this );
-            //             var jParent = null;
-            //             var jDiv = null;
-            //             var intStep = 0;
-            //             // Get the parent
-            //             jParent = jImg.parent();
-            //             // Make sure the parent is position
-            //             // relatively so that the graident steps
-            //             // can be positioned absolutely within it.
-            //             jParent
-            //                 .css( "position", "relative" )
-            //                 .width( jImg.width() )
-            //                 .height( jImg.height() )
-            //             ;
-            //             // Create the gradient elements. Here, we
-            //             // are hard-coding the number of steps,
-            //             // but this could be abstracted out.
-            //             for (
-            //                 intStep = 0 ;
-            //                 intStep <= 20 ;
-            //                 intStep++
-            //                 ){
-            //                 // Create a fade level.
-            //                 jDiv = $( "<div></div>" );
-            //                 // Set the properties on the fade level.
-            //                 jDiv
-            //                     .css (
-            //                         {
-            //                             backgroundColor: "#FFFFFF",
-            //                             opacity: (intStep * 5 / 100),
-            //                             bottom: ((100 - (intStep * 5) ) + "px"),
-            //                             left: "0px",
-            //                             position: "absolute"
-            //                         }
-            //                         )
-            //                     .width( jImg.width() )
-            //                     .height( 5 )
-            //                 ;
-            //                 // Add the fade level to the
-            //                 // containing parent.
-            //                 jParent.append( jDiv );
-            //             }
-            //         }
-            //         );
-            // 	}
-            // );
+
+			$(document).ready(function () {
+				$('a').on("click",function(e){
+					$($(this).data('target')).scrollTo();
+				});
+			});
+
+			(function($) {
+			    $.scrollToElement = function($element, speed) {
+			        speed = speed || 750;
+			        $("html, body").animate({
+			            scrollTop: $element.offset().top,
+			            scrollLeft: $element.offset().left
+			        }, speed);
+			        return $element;
+			    };
+			    $.fn.scrollTo = function(speed) {
+			        speed = speed || "normal";
+			        return $.scrollToElement(this, speed);
+			    };
+			})(jQuery);
 		</script>
 	</body>
 
-	<!-- $(".property").hover(function(){
-		$(this).css('cursor', 'pointer');
-		$(this).css('opacity', '0.75')
-	}, function(){
-		$(this).css('opacity', '1')
-	})
-
-	$(document).ready(function () {
-		$('a').on("click",function(e){
-			$($(this).data('target')).scrollTo();
-		});
-	});
-
-		/*
-		* ScrollToElement 1.0
-		* Copyright (c) 2009 Lauri Huovila, Neovica Oy
-		*  lauri.huovila@neovica.fi
-		*  http://www.neovica.fi
-		*  
-		* Dual licensed under the MIT and GPL licenses.
-		*/
-
-	(function($) {
-	    $.scrollToElement = function($element, speed) {
-	        speed = speed || 750;
-	        $("html, body").animate({
-	            scrollTop: $element.offset().top,
-	            scrollLeft: $element.offset().left
-	        }, speed);
-	        return $element;
-	    };
-	    $.fn.scrollTo = function(speed) {
-	        speed = speed || "normal";
-	        return $.scrollToElement(this, speed);
-	    };
-	})(jQuery); -->
 </html>

@@ -42,13 +42,14 @@
         <div class="widget-content nopadding">
           <form ng-submit="createUser()" class="form-horizontal">
             <div class="control-group">
-              <label class="control-label">New Username :</label>
+              <label class="control-label">Update Username :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="{{userToUpdate.username}}" ng-model="user.username"/>
+                <input type="text" class="span11" ng-model = "userToUpdate.username"/>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label"> New Password :</label>
+
               <div class="controls">
                 <input type="text"  class="span11" placeholder="New Password"  ng-model="user.password"/>
               </div>
@@ -61,7 +62,7 @@
             </div>
             <div class="form-actions">
               <button type="submit" class="btn-mini btn-warning">Update</button>
-              <button class="btn-mini btn-inverse" ng-click=''>Back</button>
+              <button class="btn-mini btn-inverse" ng-click='backToUsers()'>Back</button>
             </div>
           </form>
         </div>

@@ -84,7 +84,7 @@ function userController(){
 			if(err){
 				console.log("there was an error with the delete")
 			} else {
-				return json({ user: null})
+				return res.json({ user: null})
 			}
 		})
 	}
