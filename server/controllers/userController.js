@@ -13,7 +13,7 @@ function userController(){
 				if(result){
 					req.session.user = user;
 					req.session.save();
-					return res.json({user: user})
+					return res.json({user: "user"})
 				} else {
 					console.log('but password does not match')
 					return res.json({user: 300})

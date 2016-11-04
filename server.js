@@ -4,7 +4,12 @@ var express = require('express'),
 	path = require('path'),
 	root = __dirname,
 	port = process.env.PORT || 8000,
-	session = require('express-session');
+	session = require('express-session')
+
+// upload image requirements
+var busboy = require('connect-busboy');
+var fs = require('fs-extra');
+app.use(busboy());
 
 app.set('trust proxy', 1)
 app.use(session({
@@ -13,6 +18,7 @@ app.use(session({
 	saveUninitialized: true,
 	cookie: {secure: false}
 }))
+
 
 app.use(express.static(path.join(root, 'client')));
 app.use(express.static(path.join(root, 'bower_components')));
