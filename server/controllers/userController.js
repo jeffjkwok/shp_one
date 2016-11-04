@@ -13,7 +13,7 @@ function userController(){
 				if(result){
 					req.session.user = user;
 					req.session.save();
-					return res.json({user: user})
+					return res.json({user: "user"})
 				} else {
 					console.log('but password does not match')
 					return res.json({user: 300})
@@ -59,6 +59,15 @@ function userController(){
 				console.log("Error Retrieving: ", err)
 				return res.json({users: null})
 			} else {
+				// when pulling down from git, the initial log in info will be 
+				// username: admin
+				// password: root
+				if (users.length < 1) {
+					var password = "root"
+					var hash = bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+					var defaultUser = new User({username: "admin", password: hash})
+					defaultUser.save()
+				}
 				return res.json({users: users})
 			}
 		})

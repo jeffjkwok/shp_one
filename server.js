@@ -8,7 +8,6 @@ var express = require('express'),
 	busboy = require('connect-busboy'),
 	fs = require('fs-extra');
 
-
 app.set('trust proxy', 1)
 app.use(session({
 	secret: 'grumpy cat',
