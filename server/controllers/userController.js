@@ -59,6 +59,15 @@ function userController(){
 				console.log("Error Retrieving: ", err)
 				return res.json({users: null})
 			} else {
+				// when pulling down from git, the initial log in info will be 
+				// username: admin
+				// password: root
+				if (users.length < 1) {
+					var password = "root"
+					var hash = bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+					var defaultUser = new User({username: "admin", password: hash})
+					defaultUser.save()
+				}
 				console.log('Retrieving Users')
 				return res.json({users: users})
 			}
