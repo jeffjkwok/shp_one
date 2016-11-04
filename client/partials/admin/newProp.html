@@ -1,0 +1,116 @@
+<div ng-controller='userController'>
+  <div ng-controller = 'propertyController'>
+    <div id="header">
+      <h1><a href="dashboard.html">Matrix Admin</a></h1>
+    </div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav">
+        <li  class="" id="profile-messages" ><a title=""><i class="icon icon-user"></i>  <span class="text">Welcome <span ng-bind= 'currentUser.username' ></span></span><b class="caret"></b></a>
+        </li>
+        <li class=""><a title="" href="/logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+      </ul>
+    </div>
+  <!--close-top-Header-menu-->
+  <!--sidebar-menu-->
+    <div id="sidebar"><a href="" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+      <ul>
+        <li class="submenu"><a href="admin#/dashboard"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+        <li class="submenu"> <a href="admin#/users"><i class="icon icon-user"></i> <span>Manage Users</span></a>
+        </li>
+        <li class="active"> <a href="admin#/properties"><i class="icon icon-pencil"></i> <span>Manage Properties</span></a>
+        </li>
+        <li class="submenu"> <a href="admin#/images"><i class="icon icon-file"></i> <span>Manage Images</span></a>
+        </li>
+      </ul>
+    </div>
+  <!--sidebar-menu-->
+
+  <!--main-container-part-->
+    <div id="content">
+    <!--breadcrumbs-->
+      <div id="content-header">
+        <div id="breadcrumb"> <a href="admin#/dashboard" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a></div>
+      </div>
+    <!--End-breadcrumbs-->
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+              <h5>Add New Property</h5>
+            </div>
+            <div class="widget-content nopadding">
+              <form ng-submit="createProp()" class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label">Property Name: </label>
+                  <div class="controls">
+                    <input type="text" class="span11" ng-model = 'newProp.propName' placeholder = "Name"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">District: </label>
+                  <div class="controls">
+                    <select ng-model='newProp.district'>
+                      <option value='' selected>Select Portfolio</option>
+                      <option value='pasadena'>Pasadena/Inland Empire West</option>
+                      <option value='inland'>Inland Empire</option>
+                      <option value='south_bay'>South Bay</option>
+                      <option value='long_beach'>Long Beach</option>
+                      <option value='oc_north'>Orange County North</option>
+                      <option value='oc'>Orange County</option>
+                      <option value='oc_south'>Orange County South</option>
+                      <option value='senior'>Senior Living and Apartments</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="control-group" ng-repeat='address in addresses'>
+                  <div class='control-label'>
+                    <label >
+                      <i class="icon icon-plus" ng-click='addNewAddress()'></i>&nbsp
+                      <i class="icon icon-minus" ng-click= 'removeAddress()'></i>&nbsp&nbsp&nbsp 
+                      Address:
+                    </label>
+                  </div>
+                  <div class="controls">
+                    <input type="text"  class="span11" placeholder="Address"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Manager:</label>
+                  <div class="controls">
+                    <input type="text" class="span11" ng-model='newProp.manager' placeholder="Manager Name"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Link:</label>
+                  <div class="controls">
+                    <input type="text" class='span11' ng-model='newProp.link' placeholder="LoopNet Url"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Phone:</label>
+                  <div class="controls">
+                    <input type="tel" pattern='^\d{3}-\d{3}-\d{4}$' class="span3" ng-model='newProp.phone' placeholder="Ex: 123-456-7890"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label">Description (Optional): </label>
+                  <div class="controls">
+                    <textarea ng-model='newProp.desc' class='span11' rows='5'></textarea>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn-mini btn-success">Create</button>
+                  <button class="btn-mini btn-inverse" ng-click='backToUsers()'>Back</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

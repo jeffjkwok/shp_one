@@ -1,0 +1,78 @@
+<div ng-controller='userController'>
+  <div ng-controller='propertyController'>
+  	<div id="header">
+      <h1><a href="dashboard.html">Matrix Admin</a></h1>
+    </div>
+    <!--close-Header-part--> 
+
+
+    <!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav">
+        <li  class="" id="profile-messages" ><a title=""><i class="icon icon-user"></i>  <span class="text">Welcome <span ng-bind= 'currentUser.username' ></span></span><b class="caret"></b></a>
+        </li>
+        <li class=""><a title="" href="/logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+      </ul>
+    </div>
+    <!--close-top-Header-menu-->
+    <!--sidebar-menu-->
+    <div id="sidebar"><a href="" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+      <ul>
+        <li class="submenu"><a href="admin#/dashboard"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+        <li class="submenu"> <a href="admin#/users"><i class="icon icon-user"></i> <span>Manage Users</span></a>
+        </li>
+        <li class="active"> <a href="admin#/properties"><i class="icon icon-pencil"></i> <span>Manage Properties</span></a>
+        </li>
+         <li class="submenu"> <a href="admin#/images"><i class="icon icon-file"></i> <span>Manage Images</span></a>
+        </li>
+      </ul>
+    </div>
+    <!--sidebar-menu-->
+
+    <!--main-container-part-->
+    <div id="content">
+    <!--breadcrumbs-->
+      <div id="content-header">
+        <div id="breadcrumb"> <a href="admin#/dashboard" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+      </div>
+    <!--End-breadcrumbs-->
+
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box-prop">
+            <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+              <h5>Properties</h5>
+            </div>
+            <div class="widget-content nopadding">
+              <table class="table table-bordered data-table">
+                <thead>
+                  <tr>
+                    <th>Business Park</th>
+                    <th>District</th>
+                    <th>Manager</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="gradeX">
+                    <td>Trident</td>
+                    <td>Internet
+                      Explorer 4.0</td>
+
+                    <td>hello</td>
+                    <td>
+                      <button class='btn-info btn-mini' ng-click='toUpdateProp(user._id)'>Show</button> &nbsp 
+                      <button class='btn-warning btn-mini' ng-click='toUpdateProp(user._id)'>Update</button> &nbsp 
+                      <button class='btn-danger btn-mini' ng-click='deleteProp(user._id)'>Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button class='btn-success btn-mini prop-btn' ng-click='toAddProp()'> <a href="admin#/properties/new">Add New Entry</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

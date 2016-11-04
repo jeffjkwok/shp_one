@@ -59,7 +59,6 @@ function userController(){
 				console.log("Error Retrieving: ", err)
 				return res.json({users: null})
 			} else {
-				console.log('Retrieving Users')
 				return res.json({users: users})
 			}
 		})
@@ -75,10 +74,16 @@ function userController(){
 		})
 	}
 	this.updateUser = function(req, res){
-		User.update({_id: req.params.id}, function(err){
+		req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8));
+		User.update({_id: req.params.id}, {$set: req.body}, function(err){
+			if(err){
+				console.log('update error', err);
+			} else {
+				console.log('Entry was Updated');
+				return res.json({user: "updated"});
+			}
 		})
 	}
-
 	this.deleteUser = function(req, res){
 		User.remove({_id: req.params.id}, function(err){
 			if(err){

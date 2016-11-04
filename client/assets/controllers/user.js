@@ -21,7 +21,7 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 	// Function to create a users; then runs the getUser function to update information in real time
 	$scope.createUser = function(){
 		console.log($scope.user)
-		userFactory.createUser($scope.user, function(data){
+		userFactory.createUser($scope.user, function(){
 			$scope.user = {};
 			getUsers();
 		})
@@ -43,7 +43,15 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 	// checks the URL to see if there is an unique ID if there is then it pulls the user of that specific ID
 	if($routeParams.id){
 		userFactory.getUser($routeParams.id, function(data){
-			$scope.userToUpdate = data
+			// $scope.userToUpdate = data;
+			$scope.newUser = {}
+			$scope.newUser.username = data.username;
+		})
+	}
+
+	$scope.updateUser = function(user){
+		userFactory.updateUser($routeParams.id, user, function(){
+			$scope.backToUsers()
 		})
 	}
 
