@@ -13,7 +13,7 @@ module.exports = function(app){
 	// ROUTES FOR ADMIN
 	app.get('/admin/', function(req,res){
 		res.sendFile(path.join(root, '../../client', 'admin.html'));
-	}),
+	});
 	app.get('/admin/getUsers', user.getUsers);
 	app.post('/admin/user', user.createUser);
 	app.get('/admin/user/:id', user.getUser);
@@ -35,5 +35,5 @@ module.exports = function(app){
 		res.sendFile(path.join(root, '../../client', 'districtPage.html'));
 	})
 
-	app.get('/districts/:districtName', prop.getDistrict);
+	// app.get('/districts/:districtName', prop.getDistrict);
 }
