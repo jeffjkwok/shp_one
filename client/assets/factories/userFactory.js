@@ -1,4 +1,4 @@
-console.log('hello factory')
+
 app.factory ('userFactory', ['$http', function($http){
 	var factory = {};
 	factory.login = function(user, callback, callback2, callback3){

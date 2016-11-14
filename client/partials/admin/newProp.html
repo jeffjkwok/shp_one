@@ -40,7 +40,7 @@
         <div class="span12">
           <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-              <h5>Add New Property</h5>
+              <h5 ng-bind='title'></h5>
             </div>
             <div class="widget-content nopadding">
               <form ng-submit="createProp()" class="form-horizontal">
@@ -55,27 +55,27 @@
                   <div class="controls">
                     <select ng-model='newProp.district'>
                       <option value='' selected>Select Portfolio</option>
-                      <option value='pasadena'>Pasadena/Inland Empire West</option>
-                      <option value='inland'>Inland Empire</option>
-                      <option value='south_bay'>South Bay</option>
-                      <option value='long_beach'>Long Beach</option>
-                      <option value='oc_north'>Orange County North</option>
-                      <option value='oc'>Orange County</option>
-                      <option value='oc_south'>Orange County South</option>
-                      <option value='senior'>Senior Living and Apartments</option>
+                      <option value='Pasadena & Inland Empire West'>Pasadena/Inland Empire West</option>
+                      <option value='Inland Empire'>Inland Empire</option>
+                      <option value='South Bay'>South Bay</option>
+                      <option value='Long Beach'>Long Beach</option>
+                      <option value='Orange County North'>Orange County North</option>
+                      <option value='Orange County'>Orange County</option>
+                      <option value='Orange County South'>Orange County South</option>
+                      <option value='Senior Living and Apartments'>Senior Living and Apartments</option>
                     </select>
                   </div>
                 </div>
                 <div class="control-group" ng-repeat='address in addresses'>
                   <div class='control-label'>
                     <label >
-                      <i class="icon icon-plus" ng-click='addNewAddress()'></i>&nbsp
-                      <i class="icon icon-minus" ng-click= 'removeAddress()'></i>&nbsp&nbsp&nbsp 
+                      <i class="icon icon-plus" ng-click='addNewAddress()' ng-show='$last'></i>&nbsp
+                      <i class="icon icon-minus" ng-click= 'removeAddress()' ng-show='$last'></i>&nbsp&nbsp&nbsp 
                       Address:
                     </label>
                   </div>
                   <div class="controls">
-                    <input type="text"  class="span11" placeholder="Address"/>
+                    <input type="text"  class="span11"  name'' ng-model='address.name' placeholder="Address"/>
                   </div>
                 </div>
                 <div class="control-group">
@@ -103,8 +103,8 @@
                   </div>
                 </div>
                 <div class="form-actions">
-                  <button type="submit" class="btn-mini btn-success">Create</button>
-                  <button class="btn-mini btn-inverse" ng-click='backToUsers()'>Back</button>
+                  <button type="submit" class="btn-mini btn-success" ng-bind="button"></button>
+                  <button class="btn-mini btn-inverse" ng-click='backToProps()'>Back</button>
                 </div>
               </form>
             </div>

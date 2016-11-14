@@ -22,8 +22,9 @@ module.exports = function(app){
 	app.post('/upload', image.imageUpload);
 
 	// // ROUTES FOR PROPERTY
+	app.get('/admin/getProps', prop.getProps)
 	app.post('/admin/prop', prop.createProp);
-	// app.get('admin/prop/:id', prop.getProp);
-	// app.put('admin/prop/:id', prop.updateProp);
-	// app.delete('admin/prop/:id', prop.deletProp)
+	app.get('/admin/prop/:id', prop.getProp);
+	app.put('/admin/prop/:id', prop.updateProp);
+	app.delete('/admin/prop/:id', prop.deleteProp);
 }

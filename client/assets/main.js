@@ -11,6 +11,10 @@ app.config(function($routeProvider){
 		templateUrl: '/partials/admin/properties.html'	
 	}).when('/properties/new', {
 		templateUrl: '/partials/admin/newProp.html'
+	}).when('/properties/show/:id', {
+		templateUrl: '/partials/admin/showProp.html'
+	}).when('/properties/edit/:id',{
+		templateUrl: '/partials/admin/newProp.html'
 	}).when('/users/edit/:id', {
 		templateUrl: '/partials/admin/editUsers.html'
 	}).when('/images',{

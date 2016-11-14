@@ -41,9 +41,8 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 	}
 
 	// checks the URL to see if there is an unique ID if there is then it pulls the user of that specific ID
-	if($routeParams.id){
+	if($routeParams.id&&$location.absUrl().includes('users')){
 		userFactory.getUser($routeParams.id, function(data){
-			// $scope.userToUpdate = data;
 			$scope.newUser = {}
 			$scope.newUser.username = data.username;
 		})
