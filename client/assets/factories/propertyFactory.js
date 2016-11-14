@@ -29,5 +29,11 @@ app.factory('propFactory', ['$http', function($http){
 		})
 	}
 
+	factory.getDistrict = function(callback){
+		$http.get('/district/').then(function(returnedData){
+			callback(returnedData.data.props);
+		})
+	}
+
 	return factory;
 }])

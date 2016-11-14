@@ -49,28 +49,32 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 	function getProps(){
 		propFactory.getProps(function(data){
 			$scope.prop_list = data;
-		})
+		});
 	}
 	getProps();
 
 	// delete function
 	$scope.deleteProp = function(id){
 		propFactory.deleteProp(id, function(data){
-			getProps()
-		})
+			getProps();
+		});
 	}
 
 	// functions to navigate to certain pages 
 	$scope.backToProps = function(){
-		$location.url('/properties')
+		$location.url('/properties');
+	}
+
+	$scope.toNewProp = function(){
+		$location.url('/properties/new');
 	}
 
 	$scope.toShowProp = function(id){
-		$location.url('/properties/show/'+id)
+		$location.url('/properties/show/'+id);
 	}
 
 	$scope.toEditProp = function(id){
-		$location.url('/properties/edit/'+id)
+		$location.url('/properties/edit/'+id);
 
 	}
 

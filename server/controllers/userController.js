@@ -16,7 +16,7 @@ function userController(){
 					return res.json({user: "user"})
 				} else {
 					console.log('but password does not match')
-					return res.json({user: 300})
+					return res.json({user: "Arbritary Value"})
 				}
 			} else {
 				console.log('User does not exist')
@@ -72,6 +72,7 @@ function userController(){
 			}
 		})
 	}
+	// Retrieves the user when there is a req.param available to edit user
 	this.getUser = function(req,res){
 		User.findOne({_id: req.params.id}, function(err,user){
 			if(err){
@@ -82,6 +83,8 @@ function userController(){
 			}
 		})
 	}
+
+	// Update user function 
 	this.updateUser = function(req, res){
 		req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8));
 		User.update({_id: req.params.id}, {$set: req.body}, function(err){
@@ -93,6 +96,7 @@ function userController(){
 			}
 		})
 	}
+	// Delete User function
 	this.deleteUser = function(req, res){
 		User.remove({_id: req.params.id}, function(err){
 			if(err){

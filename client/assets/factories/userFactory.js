@@ -5,7 +5,7 @@ app.factory ('userFactory', ['$http', function($http){
 		$http.post('/admin/login', user).then(function(returnedData){
 			if(returnedData.data.user == null){
 				callback2();
-			} else if(returnedData.data.user == 300){
+			} else if(returnedData.data.user == "Arbritary Value"){
 				callback3();
 			} else {
 				callback();
