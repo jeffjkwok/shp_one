@@ -12,7 +12,15 @@ function PropertyController(){
 		})
 	}
 	this.updateProp = function(req, res){
-
+		console.log(req.body, "hello")
+		Property.update({_id: req.params.id}, {$set: req.body}, function(err){
+			if(err){
+				console.log("update error")
+			} else {
+				console.log("Property Updated")
+				return res.json({prop: "Updated"})
+			}
+		})
 	}
 	this.deleteProp = function(req, res){
 		Property.remove({_id: req.params.id}, function(err){
@@ -34,7 +42,6 @@ function PropertyController(){
 	}
 
 	this.getProp = function(req, res){
-		console.log('asdf')
 		Property.findOne({_id: req.params.id}, function(err,prop){
 			if(err){
 				return res.json({prop: null})

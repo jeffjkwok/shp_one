@@ -18,10 +18,14 @@ app.factory('propFactory', ['$http', function($http){
 	}
 
 	factory.getProp = function(id, callback){
-		console.log('factory')
 		$http.get('/admin/prop/'+id).then(function(returnedData){
 			callback(returnedData.data.prop)
-			console.log(returnedData.data.prop)
+		})
+	}
+
+	factory.updateProp = function(id, prop, callback){
+		$http.put('/admin/prop/'+id, prop).then(function(returnedData){
+			callback()
 		})
 	}
 

@@ -22,18 +22,30 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 		});
 	};
 
+	// update function that redirects to props after completing
+	$scope.updateProp = function(){
+		console.log($scope.newProp)
+		propFactory.updateProp($routeParams.id, $scope.newProp, function(){
+			$scope.backToProps();
+		})
+	}
+
+	// Checks URL for params and the word properties to grab property info
 	if($routeParams.id&&$location.absUrl().includes('properties')){
 		propFactory.getProp($routeParams.id, function(data){
 			$scope.newProp = data;
 			$scope.addresses = $scope.newProp.address;
 			$scope.title = "Edit Property";
 			$scope.button = "Update";
+			$scope.function = $scope.updateProp
 		})
 	} else {
-		$scope.title = "Add New Property"
-		$scope.button = "Create"
+		$scope.title = "Add New Property";
+		$scope.button = "Create";
+		$scope.function = $scope.createProp;
 	}
 
+	// Gets all properties for prop partial on admin page
 	function getProps(){
 		propFactory.getProps(function(data){
 			$scope.prop_list = data;
@@ -41,12 +53,14 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 	}
 	getProps();
 
+	// delete function
 	$scope.deleteProp = function(id){
 		propFactory.deleteProp(id, function(data){
 			getProps()
 		})
 	}
 
+	// functions to navigate to certain pages 
 	$scope.backToProps = function(){
 		$location.url('/properties')
 	}

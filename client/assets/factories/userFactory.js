@@ -35,7 +35,7 @@ app.factory ('userFactory', ['$http', function($http){
 	}
 
 	factory.updateUser = function(id, user, callback){
-		$http.put('admin/user/'+id, user).then(function(returnedData){
+		$http.put('/admin/user/'+id, user).then(function(returnedData){
 			callback()
 		})
 	}
