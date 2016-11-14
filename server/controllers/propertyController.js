@@ -51,15 +51,15 @@ function PropertyController(){
 		})
 	}
 
-	this.getDistrict = function(req, res){
-		Property.find({district: req.params.districtName}, function(err,props){
-			if(err){
-				console.log("Error Retrieving: ", err)
-			} else {
-				return res.json({props: props})
-			}
-		})
-	}
+	// this.getDistrict = function(req, res){
+	// 	Property.find({district: req.params.districtName}, function(err,props){
+	// 		if(err){
+	// 			console.log("Error Retrieving: ", err)
+	// 		} else {
+	// 			return res.json({props: props})
+	// 		}
+	// 	})
+	// }
 
 };
 module.exports = new PropertyController();
