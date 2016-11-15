@@ -80,7 +80,8 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 
 	if($routeParams.dist){
 		propFactory.getDistrict($routeParams.dist, function(data){
-			console.log(data)
+			$scope.properties = data;
+			console.log($scope.properties)
 		})
 	}
 

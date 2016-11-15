@@ -1,8 +1,14 @@
 <div ng-controller ='propertyController'>
-	<h1>hello</h1>
-	<h1>hello</h1>
-	<h1>hello</h1>
-	<h1>hello</h1>
-	<h1>hello</h1>
-	<h1>hello</h1>
+	<div ng-repeat='property in properties'>
+		<h1 ng-bind='property.propName'></h1>
+		<p ng-bind='property.manager'></p>
+		<p ng-bind='property.phone'></p>
+		<div ng-repeat='address in property.address'>
+			<p>{{address.name}}</p>
+		</div>
+		<a href='{{property.link}}' target="_blank
+		">CHECK AVAILABILITY
+		</a>
+	</div>
 </div>
+

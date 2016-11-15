@@ -30,10 +30,9 @@ module.exports = function(app){
 	app.put('/admin/prop/:id', prop.updateProp);
 	app.delete('/admin/prop/:id', prop.deleteProp);
 
-	//ROUTE FOR DISTRICT PAGE
+	//ROUTES FOR DISTRICT PAGE
 	app.get('/district/', function(req,res){
 		res.sendFile(path.join(root, '../../client', 'districtPage.html'));
 	})
-
-	// app.get('/districts/:districtName', prop.getDistrict);
+	app.get('/district/:districtName', prop.getDistrict);
 }
