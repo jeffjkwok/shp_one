@@ -1,0 +1,100 @@
+<div ng-controller='userController'>
+	<div id="header">
+  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="" id="profile-messages" ><a title=""><i class="icon icon-user"></i>  <span class="text">Welcome <span ng-bind= 'currentUser.username' ></span></span><b class="caret"></b></a>
+    </li>
+    <li class=""><a title="" href="/logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+  </ul>
+</div>
+<!--close-top-Header-menu-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul>
+    <li class="submenu"><a href="admin#/dashboard"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li class="active"> <a href="admin#/users"><i class="icon icon-user"></i> <span>Manage Users</span></a>
+    </li>
+    <li class="submenu"> <a href="admin#/properties"><i class="icon icon-pencil"></i> <span>Manage Properties</span></a>
+    </li>
+    <li class="submenu"> <a href="admin#/images"><i class="icon icon-file"></i> <span>Manage Images</span></a>
+    </li>
+  </ul>
+</div>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="admin#/dashboard" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+  </div>
+<!--End-breadcrumbs-->
+ <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Users</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Last Updated</th>
+                  <th>Date Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd gradeX" ng-repeat='user in user_list'>
+                  <td ng-bind='user.username'></td>
+                  <td ng-bind='user.updatedAt| date:"yyyy-MM-dd HH:mm:ss Z"'></td>
+                  <td ng-bind='user.createdAt | date:yyyyddMM'></td>
+                  <td><button class='btn-warning btn-mini' ng-click='toUpdatePage(user._id)'>Update</button> &nbsp <button class='btn-danger btn-mini' ng-click='deleteUser(user._id)'>Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Add an User</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form ng-submit="createUser()" class="form-horizontal" name="password_validate" id="password_validate" novalidate="novalidate">
+            <div class="control-group">
+              <label class="control-label">Username :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="New Username" ng-model="user.username"/>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Password :</label>
+              <div class="controls">
+                <input type="text"  class="span11" placeholder="New Password"  ng-model="user.password"/>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Confirm Password :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="Re-enter Password"/>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-mini btn-success">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
