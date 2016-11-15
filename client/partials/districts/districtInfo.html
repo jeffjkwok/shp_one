@@ -1,13 +1,16 @@
 <div ng-controller ='propertyController'>
+	<h1></h1>
 	<div ng-repeat='property in properties'>
-		<h1 ng-bind='property.propName'></h1>
-		<p ng-bind='property.manager'></p>
-		<p ng-bind='property.phone'></p>
+		<h4 ng-bind='property.propName'></h4>
 		<div ng-repeat='address in property.address'>
 			<p>{{address.name}}</p>
 		</div>
+		<h4> Property Manager / Leasing Agent </h4>
+		<p> Name: <span ng-bind='property.manager'></span></p>
+		<p> Phone: <span ng-bind='property.phone'><</span></p>
+		<br>
 		<a href='{{property.link}}' target="_blank
-		">CHECK AVAILABILITY
+		">Click here to check for Availability
 		</a>
 	</div>
 </div>
