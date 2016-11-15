@@ -33,19 +33,16 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 			$scope.user_list = data;
 		})
 	}
-	getUsers()
 
-	// function that switches to update User partial 
-	$scope.toUpdatePage = function(id){
-		$location.url('/users/edit/'+id)
-	}
 
 	// checks the URL to see if there is an unique ID if there is then it pulls the user of that specific ID
-	if($routeParams.id&&$location.absUrl().includes('users')){
+	if($routeParams.userId){
 		userFactory.getUser($routeParams.id, function(data){
 			$scope.newUser = {}
 			$scope.newUser.username = data.username;
 		})
+	} else {
+		getUsers()
 	}
 
 	$scope.updateUser = function(user){
@@ -60,6 +57,11 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 		userFactory.deleteUser(id, function(data){
 			getUsers()
 		})
+	}
+	
+	// function that switches to update User partial 
+	$scope.toUpdatePage = function(id){
+		$location.url('/users/edit/'+id)
 	}
 
 	$scope.backToUsers = function(){

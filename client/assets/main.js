@@ -11,11 +11,11 @@ app.config(function($routeProvider){
 		templateUrl: '/partials/admin/properties.html'	
 	}).when('/properties/new', {
 		templateUrl: '/partials/admin/newProp.html'
-	}).when('/properties/show/:id', {
+	}).when('/properties/show/:propId', {
 		templateUrl: '/partials/admin/showProp.html'
-	}).when('/properties/edit/:id',{
+	}).when('/properties/edit/:propId',{
 		templateUrl: '/partials/admin/newProp.html'
-	}).when('/users/edit/:id', {
+	}).when('/users/edit/:userId', {
 		templateUrl: '/partials/admin/editUsers.html'
 	}).when('/images',{
 		templateUrl: '/partials/admin/imageUpload.html'
