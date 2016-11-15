@@ -41,35 +41,39 @@
         <div class="span12">
           <div class="widget-box-prop">
             <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-              <h5>Properties</h5>
+              <h5>Information</h5>
             </div>
             <div class="widget-content nopadding">
               <table class="table table-bordered data-table">
-                <thead>
-                  <tr>
-                    <th>Business Park</th>
-                    <th>District</th>
-                    <th>Manager</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
                 <tbody>
-                  <tr class="gradeX" ng-repeat='prop in prop_list'>
-                    <td ng-bind='prop.propName'></td>
-                    <td ng-bind='prop.district'></td>
-
-                    <td ng-bind='prop.manager'></td>
-                    <td>
-                      <button class='btn-info btn-mini' ng-click='toShowProp(prop._id)'>Show</button> &nbsp 
-                      <button class='btn-warning btn-mini' ng-click='toEditProp(prop._id)'>Update</button> &nbsp 
-                      <button class='btn-danger btn-mini' ng-click='deleteProp(prop._id)'>Delete</button>
-                    </td>
+                  <tr class="gradeX">
+                    <td><b>Name: </b><span ng-bind='newProp.propName'></span></td>
+                  </tr>
+                  <tr class="gradeX">
+                    <td><b>District: </b><span ng-bind='newProp.district'></span></td>
+                  </tr>
+                  <tr class="gradeX">
+                    <td><b>Manager: </b><span ng-bind='newProp.manager'></span></td>
+                  </tr>
+                  <tr class="gradeX">
+                    <td><b>Phone: </b><span ng-bind='newProp.phone'></span></td>
+                  </tr>
+                  <tr class="gradeX" ng-repeat='address in newProp.address'>
+                    <td><b>Address: </b><span ng-bind='address.name'></span></td>
+                  </tr>
+                  <tr class="gradeX">
+                    <td><b>City: </b><span ng-bind='newProp.city'></span></td>
+                  </tr>
+                  <tr class="gradeX">
+                    <td><b>Link: </b><a href='{{newProp.link}}' target="_blank
+        " ng-bind='newProp.link'></a></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <button class='btn-success btn-mini prop-btn' ng-click='toAddProp()'> <a href="admin#/properties/new">Add New Entry</a></button>
+          <button ng-click='toEditProp(newProp._id)' class="btn-mini btn-warning">Edit</button>
+          <button class="btn-mini btn-inverse" ng-click='backToProps()'>Back</button>
         </div>
       </div>
     </div>

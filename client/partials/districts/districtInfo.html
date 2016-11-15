@@ -1,21 +1,23 @@
 <div  ng-controller ='propertyController'>
-	<h1 ng-bind='distTitle'></h1>
-	<div class='row' ng-repeat='property in properties'>
-		<div class='col-sm-6'>
-			<h4 ng-bind='property.propName'></h4>
-			<div ng-repeat='address in property.address'>
-				<p>{{address.name}}</p>
+	<div class='container'>
+		<h1 ng-bind='distTitle'></h1>
+		<div class='row' ng-repeat='property in properties'>
+			<div class='col-sm-6 col-xs-12'>
+				<h4 ng-bind='property.propName'></h4>
+				<div ng-repeat='address in property.address'>
+					<p>{{address.name}}</p>
+				</div>
+				<p ng-bind='property.city'></p>
 			</div>
-			<p ng-bind='property.city'></p>
+			<div class='col-sm-6 col-xs-12'>	
+				<h4> Property Manager / Leasing Agent </h4>
+				<p> Name: <span ng-bind='property.manager'></span></p>
+				<p> Phone: <span ng-bind='property.phone'><</span></p>
+				<a href='{{property.link}}' target="_blank
+				">Click here to check for Availability
+				</a>
+			<div>
 		</div>
-		<div class='col-sm-6'>	
-			<h4> Property Manager / Leasing Agent </h4>
-			<p> Name: <span ng-bind='property.manager'></span></p>
-			<p> Phone: <span ng-bind='property.phone'><</span></p>
-			<a href='{{property.link}}' target="_blank
-			">Click here to check for Availability
-			</a>
-		<div>
 	</div>
 </div>
 

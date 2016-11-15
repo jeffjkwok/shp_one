@@ -37,7 +37,7 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 
 	// checks the URL to see if there is an unique ID if there is then it pulls the user of that specific ID
 	if($routeParams.userId){
-		userFactory.getUser($routeParams.id, function(data){
+		userFactory.getUser($routeParams.userId, function(data){
 			$scope.newUser = {}
 			$scope.newUser.username = data.username;
 		})
@@ -58,7 +58,7 @@ app.controller('userController', ['$scope', 'userFactory', '$location', '$routeP
 			getUsers()
 		})
 	}
-	
+
 	// function that switches to update User partial 
 	$scope.toUpdatePage = function(id){
 		$location.url('/users/edit/'+id)

@@ -32,7 +32,7 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 
 	// Checks URL for params and the word properties to grab property info
 	if($routeParams.propId){
-		propFactory.getProp($routeParams.id, function(data){
+		propFactory.getProp($routeParams.propId, function(data){
 			$scope.newProp = data;
 			$scope.addresses = $scope.newProp.address;
 			$scope.title = "Edit Property";
