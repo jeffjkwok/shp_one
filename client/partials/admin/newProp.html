@@ -79,6 +79,12 @@
                   </div>
                 </div>
                 <div class="control-group">
+                  <label class="control-label">City, State, and Zip:</label>
+                  <div class="controls">
+                    <input type="text" class="span11" ng-model='newProp.city' placeholder="City, State, and Zip"/>
+                  </div>
+                </div>
+                <div class="control-group">
                   <label class="control-label">Manager:</label>
                   <div class="controls">
                     <input type="text" class="span11" ng-model='newProp.manager' placeholder="Manager Name"/>
@@ -99,7 +105,7 @@
                 <div class="control-group">
                   <label class="control-label">Description (Optional): </label>
                   <div class="controls">
-                    <textarea ng-model='newProp.desc' class='span11' rows='5'></textarea>
+                    <textarea ng-model='newProp.desc' class='span11' rows='5' placeholder="Description..."></textarea>
                   </div>
                 </div>
                 <div class="form-actions">

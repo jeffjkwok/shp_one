@@ -6,6 +6,7 @@ var PropertySchema = new Schema({
 	district: {type: String},
 	phone: {type: String},
 	address: [{type: Schema.Types.Mixed}],
+	city: {type: String},
 	link: {type: String},
 	description: {type: String}
 }, {timestamps:true})

@@ -31,8 +31,8 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 	}
 
 	// Checks URL for params and the word properties to grab property info
-	if($routeParams.id&&$location.absUrl().includes('properties')){
-		propFactory.getProp($routeParams.id, function(data){
+	if($routeParams.propId){
+		propFactory.getProp($routeParams.propId, function(data){
 			$scope.newProp = data;
 			$scope.addresses = $scope.newProp.address;
 			$scope.title = "Edit Property";
@@ -43,6 +43,7 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 		$scope.title = "Add New Property";
 		$scope.button = "Create";
 		$scope.function = $scope.createProp;
+		getProps();
 	}
 
 	// Gets all properties for prop partial on admin page
@@ -51,7 +52,6 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 			$scope.prop_list = data;
 		});
 	}
-	getProps();
 
 	// delete function
 	$scope.deleteProp = function(id){
@@ -81,7 +81,7 @@ app.controller('propertyController', ['$scope', 'propFactory', '$location', '$ro
 	if($routeParams.dist){
 		propFactory.getDistrict($routeParams.dist, function(data){
 			$scope.properties = data;
-			console.log($scope.properties)
+			$scope.distTitle = $routeParams.dist;
 		})
 	}
 
