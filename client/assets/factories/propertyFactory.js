@@ -1,5 +1,12 @@
 app.factory('propFactory', ['$http', function($http){
 	var factory = {};
+	var scriptCount = 0;
+	factory.getScriptCount = function(){
+		return scriptCount;
+	}
+	factory.incrementScriptCount = function(){
+		scriptCount ++;
+	}
 	factory.createProp = function(property, callback){
 		$http.post('/admin/prop', property).then(function(returnedData){
 			callback()

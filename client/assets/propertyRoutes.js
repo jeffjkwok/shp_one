@@ -4,6 +4,9 @@ app.config(function($routeProvider){
 	.when('/', {
 		templateUrl: '/partials/main/main.html'
 	})
+	.when('/scroll/:eID', {
+		templateUrl: '/partials/main/main.html'
+	})
 	.when('/:dist', {
 		templateUrl: '/partials/districts/districtInfo.html'
 	})

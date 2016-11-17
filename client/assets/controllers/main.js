@@ -1,4 +1,5 @@
-app.controller('mainController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll) {
+app.controller('mainController', ['$scope', '$location', '$anchorScroll', '$routeParams', 'propFactory', function($scope, $location, $anchorScroll, $routeParams, propFactory) {
+
         $scope.scroll = function(eID) {
             var startY = currentYPosition();
             var stopY = elmYPosition(eID);
@@ -42,6 +43,15 @@ app.controller('mainController', ['$scope', '$location', '$anchorScroll', functi
                     y += node.offsetTop;
                 } return y;
             }
+        }
+
+        if($routeParams.eID){
+            //for scrolling affect
+            // $scope.scroll($routeParams.eID);
+
+            //to start page on that section
+            $location.hash($routeParams.eID);
+            $anchorScroll();
         }
 
         // Map Init
@@ -94,13 +104,16 @@ app.controller('mainController', ['$scope', '$location', '$anchorScroll', functi
             }
         }
 
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD2rqTRzxmNggw_C3sEjVDoYDHQsS_isbM&callback=initMap';
-        document.body.appendChild(script);
-        setTimeout(function() {
-            $scope.initialize();
-        }, 500);
+        if(propFactory.getScriptCount() < 1){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD2rqTRzxmNggw_C3sEjVDoYDHQsS_isbM&callback=initMap';
+            document.body.appendChild(script);
+            setTimeout(function() {
+                $scope.initialize();
+            }, 500);
+            propFactory.incrementScriptCount();
+        }
         //*********
 
     }
