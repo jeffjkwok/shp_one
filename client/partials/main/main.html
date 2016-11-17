@@ -371,53 +371,44 @@
 			$(this).parent().addClass("active");
 		});
 
-		// jQuery scroll. Commented because trying to use angularjs $anchorScroll
-		// $(".navbar a, footer a").on('click', function(event) {
-		// 	// Make sure this.hash has a value before overriding default behavior
-		// 	if (this.hash !== "") {
-		// 		// Prevent default anchor click behavior
-		// 		event.preventDefault();
-		// 		// Store hash
-		// 		var hash = this.hash;
-		// 		// Using jQuery's animate() method to add smooth page scroll
-		// 		// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-		// 		$('html, body').animate({
-		// 			scrollTop: $(hash).offset().top
-		// 		}, 800, function() {
-		// 			// Add hash (#) to URL when done scrolling (default click behavior)
-		// 			window.location.hash = hash;
-		// 		});
-		// 	} // End if
-		// });
-		window.initMap() {alert("ok");}
-
 		$(".property").hover(function() {
 			$(this).css('cursor', 'pointer');
 			$(this).css('opacity', '0.75')
 		}, function() {
 			$(this).css('opacity', '1')
 		})
-
-
-		// $(document).ready(function() {
-		// 	$('a').on("click", function(e) {
-		// 		$($(this).data('target')).scrollTo();
-		// 	});
-		// });
-
-		// (function($) {
-		// 	$.scrollToElement = function($element, speed) {
-		// 		speed = speed || 750;
-		// 		$("html, body").animate({
-		// 			scrollTop: $element.offset().top,
-		// 			scrollLeft: $element.offset().left
-		// 		}, speed);
-		// 		return $element;
-		// 	};
-		// 	$.fn.scrollTo = function(speed) {
-		// 		speed = speed || "normal";
-		// 		return $.scrollToElement(this, speed);
-		// 	};
-		// })(jQuery);
 	</script>
+
+	<footer>
+		<div class='container'>
+			<div class='row'>
+				<div class='col-lg-12'>
+					<ul class='list-inline'>
+						<li>
+							<a ng-click='scroll("home")'>Home</a>
+						</li>
+						<li class='footer-menu-divider'>.</li>
+						<li>
+							<a ng-click='scroll("about")'>About Us</a>
+						</li>
+						<li class='footer-menu-divider'>.</li>
+						<li>
+							<a ng-click='scroll("properties")'>Our Properties</a>
+						</li>
+						<li class='footer-menu-divider'>.</li>
+						<li>
+							<a ng-click='scroll("find-a-space")'>Find a Property</a>
+						</li>
+						<li class='footer-menu-divider'>.</li>
+						<li>
+							<a ng-click='scroll("contact")'>Contact</a>
+						</li>
+					</ul>
+					<p class='copyright text-muted small'>
+						© Sunny Hill Palladium, LLC (SHP)
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 </div>
