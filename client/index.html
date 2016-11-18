@@ -13,21 +13,7 @@
 		<script src="./assets/factories/propertyFactory.js"></script>
 		<script src="./assets/controllers/property.js"></script>
 		<script src="./assets/controllers/main.js"></script>
-		<script>
-			$(document).ready(function() {
-				$(".navbar a").on("click", function() {
-					$(".navbar").find(".active").removeClass("active");
-					$(this).parent().addClass("active");
-				});
-
-				$(".property").hover(function() {
-					$(this).css('cursor', 'pointer');
-					$(this).css('opacity', '0.75')
-				}, function() {
-					$(this).css('opacity', '1')
-				});
-			});
-		</script>
+		<script src="./assets/scripts/main_jQuery.js"></script>
 	</head>
 	<body>
 		<div ng-view>
