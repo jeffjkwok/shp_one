@@ -107,7 +107,7 @@ app.controller('mainController', ['$scope', '$location', '$anchorScroll', '$rout
         if(propFactory.getScriptCount() < 1){
             var script = document.createElement('script');
             script.type = 'text/javascript';
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD2rqTRzxmNggw_C3sEjVDoYDHQsS_isbM&callback=initMap';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC6kxhIKKCeQU4TJpRftvVaiCQP1yG0l9k';
             document.body.appendChild(script);
             setTimeout(function() {
                 $scope.initialize();
